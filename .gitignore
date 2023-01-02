@@ -1,0 +1,6 @@
+# Generated content
+out/
+bin/
+
+# Editor files etc
+.haxelib
