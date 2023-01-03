@@ -7,10 +7,10 @@ using haxe.EnumTools;
 @:keep @:keepSub
 class TAException extends Exception {
     public function new(status:ExceptionStatus) {
+        super(status.getName());
         if (status == Success) {
             throw new Exception('You Should NOT throw exception when your task is successful');
         }
-        super(status.getName());
     }
 }
 
