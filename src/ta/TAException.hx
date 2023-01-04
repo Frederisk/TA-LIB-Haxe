@@ -14,6 +14,7 @@ class TAException extends Exception {
     }
 }
 
+@:nativeGen
 enum ExceptionStatus {
     Success;
     LibNotInitialize;
