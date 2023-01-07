@@ -22,7 +22,7 @@ function Ceil(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
     i = startIndex;
     outIndex = 0;
     while (i <= endIndex) {
-        outReal[outIndex] = Math.ceil(inReal[i]);
+        outReal[outIndex] = Math.fceil(inReal[i]);
         i++;
         outIndex++;
     }

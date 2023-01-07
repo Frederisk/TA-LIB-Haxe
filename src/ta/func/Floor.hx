@@ -22,7 +22,7 @@ function Floor(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
     i = startIndex;
     outIndex = 0;
     while (i <= endIndex) {
-        outReal[outIndex] = Math.floor(inReal[i]);
+        outReal[outIndex] = Math.ffloor(inReal[i]);
         i++;
         outIndex++;
     }
