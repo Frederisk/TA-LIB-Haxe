@@ -64,9 +64,7 @@ WILLR                Williams' %R
 Volume Indicators
 
 ```plain
-AD                   Chaikin A/D Line
-ADOSC                Chaikin A/D Oscillator
-OBV                  On Balance Volume
+# ADOSC                Chaikin A/D Oscillator
 ```
 
 Cycle Indicators

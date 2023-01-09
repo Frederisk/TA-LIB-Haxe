@@ -25,3 +25,7 @@ inline function IsZero(v:Float):Bool {
 inline function IsZeroOrNeg(v:Float):Bool {
     return (v < 0.00000001);
 }
+
+inline function PerToK(per:Float) {
+    return (2.0 / (per + 1));
+}
