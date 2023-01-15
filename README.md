@@ -11,7 +11,7 @@ BBANDS               Bollinger Bands
 DEMA                 Double Exponential Moving Average
 EMA                  Exponential Moving Average
 HT_TRENDLINE         Hilbert Transform - Instantaneous Trendline
-KAMA                 Kaufman Adaptive Moving Average
+# KAMA                 Kaufman Adaptive Moving Average
 MA                   Moving average
 MAMA                 MESA Adaptive Moving Average
 MAVP                 Moving average with variable period
@@ -80,9 +80,8 @@ HT_TRENDMODE         Hilbert Transform - Trend vs Cycle Mode
 Price Transform
 
 ```plain
-ATR                  Average True Range
-NATR                 Normalized Average True Range
-TRANGE               True Range
+# ATR                  Average True Range
+# NATR                 Normalized Average True Range
 ```
 
 Pattern Recognition:
