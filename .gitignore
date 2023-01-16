@@ -1,6 +1,7 @@
 # Generated content
 out/
 bin/
+dump/
 
 # Editor files etc
 .haxelib

@@ -32,8 +32,9 @@ function LinearRegIntercept(startIndex:Int, endIndex:Int, inReal:Array<Float>, o
 
     lookbackTotal = LinearRegInterceptLookback(optInTimePeriod);
 
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;

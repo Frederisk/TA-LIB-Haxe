@@ -32,8 +32,9 @@ function TSF(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 
     lookbackTotal = TSFLookback(optInTimePeriod);
 
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;

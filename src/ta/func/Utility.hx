@@ -26,6 +26,42 @@ inline function IsZeroOrNeg(v:Float):Bool {
     return (v < 0.00000001);
 }
 
+// HILBERT_VARIABLES(varName) :
+// var #_Odd:Array<Float> = [0.0, 0.0, 0.0]; // size: 3
+// var #_Even:Array<Float> = [0.0, 0.0, 0.0]; // size: 3
+// var #:Float;
+// var prev_#_Odd:Float;
+// var prev_#_Even:Float;
+// var prev_#_input_Odd:Float;
+// var prev_#_input_Even:Float;
+
+// INIT_HILBERT_VARIABLES(varName) :
+// #_Odd[0] = 0.0;
+// #_Odd[1] = 0.0;
+// #_Odd[2] = 0.0;
+// #_Even[0] = 0.0;
+// #_Even[1] = 0.0;
+// #_Even[2] = 0.0;
+// # = 0.0;
+// prev_#_Odd = 0.0;
+// prev_#_Even = 0.0;
+// prev_#_input_Odd  = 0.0;
+// prev_#_input_Even = 0.0;
+
+// DO_HILBERT_TRANSFORM(varName,input,OddOrEvenId) :
+// hilbertTempReal = a *#2#;
+// #1# = -#1#_#3#[hilbertIdx];
+// #1#_#3#[hilbertIdx] = hilbertTempReal;
+// #1#+= hilbertTempReal;
+// #1#-= prev_#1#_#3#;
+// prev_#1#_#3# = b * prev_#1#_input_#3#;
+// #1#+= prev_#1#_#3#;
+// prev_#1#_input_#3# =#2#;
+// #1#*= adjustedPrevPeriod;
+
+// DO_HILBERT_ODD(varName,input)  DO_HILBERT_TRANSFORM(varName,input,Odd)
+// DO_HILBERT_EVEN(varName,input) DO_HILBERT_TRANSFORM(varName,input,Even)
+
 inline function PerToK(per:Float) {
     return (2.0 / (per + 1));
 }

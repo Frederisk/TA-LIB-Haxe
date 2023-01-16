@@ -28,8 +28,9 @@ function Sum(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 
     lookbackTotal = (optInTimePeriod - 1);
 
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;

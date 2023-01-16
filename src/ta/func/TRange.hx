@@ -20,11 +20,12 @@ function TRange(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
         throw new TAException(BadParam);
     }
 
-    if (startIndex < 1)
-        {startIndex = 1;}
+    if (startIndex < 1) {
+        startIndex = 1;
+    }
 
     if (startIndex > endIndex) {
-        outBegIndex =0;
+        outBegIndex = 0;
         outNBElement = 0;
         return {
             outBegIndex: outBegIndex,
@@ -42,13 +43,14 @@ function TRange(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
         greatest = tempHT - tempLT;
 
         val2 = Math.abs(tempCY - tempHT);
-        if (val2 > greatest)
+        if (val2 > greatest) {
             greatest = val2;
+        }
 
         val3 = Math.abs(tempCY - tempLT);
-        if (val3 > greatest)
+        if (val3 > greatest) {
             greatest = val3;
-
+        }
         outReal[outIndex++] = greatest;
         today++;
     }

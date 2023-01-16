@@ -11,6 +11,7 @@ function StdDev(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
     // var outReal:Array<Float> = [];
 
     var i:Int;
+    var ret;
     var tempReal:Float;
 
     if (startIndex < 0) {
@@ -34,7 +35,7 @@ function StdDev(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
         throw new TAException(BadParam);
     }
 
-    var ret = IntVar(startIndex, endIndex, inReal, optInTimePeriod);
+    ret = IntVar(startIndex, endIndex, inReal, optInTimePeriod);
     // ret = IntVar(startIdx, endIdx, inReal, optInTimePeriod, outBegIdx, outNBElement, outReal);
     var outBegIndex:Int = ret.outBegIndex;
     var outNBElement:Int = ret.outNBElement;

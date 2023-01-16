@@ -33,8 +33,9 @@ function Ad(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Float
         tmp = high - low;
         close = inClose[currentBar];
 
-        if (tmp > 0.0)
+        if (tmp > 0.0) {
             ad += (((close - low) - (high - close)) / tmp) * (inVolume[currentBar]);
+        }
 
         outReal[outIndex++] = ad;
 

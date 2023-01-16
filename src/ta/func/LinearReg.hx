@@ -32,8 +32,9 @@ function LinearReg(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimeP
 
     lookbackTotal = LinearRegLookback(optInTimePeriod);
 
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;

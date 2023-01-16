@@ -32,8 +32,9 @@ function LinearRegAngle(startIndex:Int, endIndex:Int, inReal:Array<Float>, optIn
 
     lookbackTotal = LinerRegAngleLookback(optInTimePeriod);
 
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     /* Make sure there is still something to evaluate. */
     if (startIndex > endIndex) {

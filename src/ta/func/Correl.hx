@@ -40,8 +40,9 @@ function Correl(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Arra
         throw new TAException(BadParam);
     }
     lookbackTotal = optInTimePeriod - 1;
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;
@@ -61,7 +62,6 @@ function Correl(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Arra
     today = trailingIndex;
 
     while (today <= startIndex) {
-
         x = inReal0[today];
         sumX += x;
         sumX2 += x * x;
@@ -76,10 +76,11 @@ function Correl(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Arra
     trailingX = inReal0[trailingIndex];
     trailingY = inReal1[trailingIndex++];
     tempReal = (sumX2 - ((sumX * sumX) / optInTimePeriod)) * (sumY2 - ((sumY * sumY) / optInTimePeriod));
-    if (!IsZeroOrNeg(tempReal))
+    if (!IsZeroOrNeg(tempReal)) {
         outReal[0] = (sumXY - ((sumX * sumY) / optInTimePeriod)) / Math.sqrt(tempReal);
-    else
+    } else {
         outReal[0] = 0.0;
+    }
 
     outIndex = 1;
     while (today <= endIndex) {
@@ -102,10 +103,11 @@ function Correl(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Arra
         trailingX = inReal0[trailingIndex];
         trailingY = inReal1[trailingIndex++];
         tempReal = (sumX2 - ((sumX * sumX) / optInTimePeriod)) * (sumY2 - ((sumY * sumY) / optInTimePeriod));
-        if (!IsZeroOrNeg(tempReal))
+        if (!IsZeroOrNeg(tempReal)) {
             outReal[outIndex++] = (sumXY - ((sumX * sumY) / optInTimePeriod)) / Math.sqrt(tempReal);
-        else
+        } else {
             outReal[outIndex++] = 0.0;
+        }
     }
 
     outNBElement = outIndex;

@@ -29,12 +29,12 @@ function Obv(startIndex:Int, endIndex:Int, inReal:Array<Float>, inVolume:Array<F
 
     i = startIndex;
     while (i <= endIndex) {
-
         tempReal = inReal[i];
-        if (tempReal > prevReal)
+        if (tempReal > prevReal) {
             prevOBV += inVolume[i];
-        else if (tempReal < prevReal)
+        } else if (tempReal < prevReal) {
             prevOBV -= inVolume[i];
+        }
 
         outReal[outIndex++] = prevOBV;
         prevReal = tempReal;

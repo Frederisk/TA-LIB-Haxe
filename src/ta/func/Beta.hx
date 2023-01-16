@@ -39,8 +39,9 @@ function Beta(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<
 
     nbInitialElementNeeded = optInTimePeriod;
 
-    if (startIndex < nbInitialElementNeeded)
+    if (startIndex < nbInitialElementNeeded) {
         startIndex = nbInitialElementNeeded;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;
@@ -60,17 +61,19 @@ function Beta(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<
 
     while (i < startIndex) {
         tmp_real = inReal0[i];
-        if (!IsZero(last_price_x))
+        if (!IsZero(last_price_x)) {
             x = (tmp_real - last_price_x) / last_price_x;
-        else
+        } else {
             x = 0.0;
+        }
         last_price_x = tmp_real;
 
         tmp_real = inReal1[i++];
-        if (!IsZero(last_price_y))
+        if (!IsZero(last_price_y)) {
             y = (tmp_real - last_price_y) / last_price_y;
-        else
+        } else {
             y = 0.0;
+        }
         last_price_y = tmp_real;
 
         S_xx += x * x;
@@ -83,17 +86,19 @@ function Beta(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<
     n = optInTimePeriod;
     do {
         tmp_real = inReal0[i];
-        if (!IsZero(last_price_x))
+        if (!IsZero(last_price_x)) {
             x = (tmp_real - last_price_x) / last_price_x;
-        else
+        } else {
             x = 0.0;
+        }
         last_price_x = tmp_real;
 
         tmp_real = inReal1[i++];
-        if (!IsZero(last_price_y))
+        if (!IsZero(last_price_y)) {
             y = (tmp_real - last_price_y) / last_price_y;
-        else
+        } else {
             y = 0.0;
+        }
         last_price_y = tmp_real;
 
         S_xx += x * x;
@@ -102,24 +107,27 @@ function Beta(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<
         S_y += y;
 
         tmp_real = inReal0[trailingIndex];
-        if (!IsZero(trailing_last_price_x))
+        if (!IsZero(trailing_last_price_x)) {
             x = (tmp_real - trailing_last_price_x) / trailing_last_price_x;
-        else
+        } else {
             x = 0.0;
+        }
         trailing_last_price_x = tmp_real;
 
         tmp_real = inReal1[trailingIndex++];
-        if (!IsZero(trailing_last_price_y))
+        if (!IsZero(trailing_last_price_y)) {
             y = (tmp_real - trailing_last_price_y) / trailing_last_price_y;
-        else
+        } else {
             y = 0.0;
+        }
         trailing_last_price_y = tmp_real;
 
         tmp_real = (n * S_xx) - (S_x * S_x);
-        if (!IsZero(tmp_real))
+        if (!IsZero(tmp_real)) {
             outReal[outIndex++] = ((n * S_xy) - (S_x * S_y)) / tmp_real;
-        else
+        } else {
             outReal[outIndex++] = 0.0;
+        }
 
         S_xx -= x * x;
         S_xy -= x * y;

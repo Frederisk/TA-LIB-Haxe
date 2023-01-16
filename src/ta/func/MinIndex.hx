@@ -29,8 +29,9 @@ function MinIndex(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePe
 
     nbInitialElementNeeded = (optInTimePeriod - 1);
 
-    if (startIndex < nbInitialElementNeeded)
+    if (startIndex < nbInitialElementNeeded) {
         startIndex = nbInitialElementNeeded;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;
