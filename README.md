@@ -7,11 +7,8 @@ Rewrite TA-LIB in Haxe.
 Overlap Studies
 
 ```plain
-BBANDS               Bollinger Bands
-DEMA                 Double Exponential Moving Average
-EMA                  Exponential Moving Average
+# BBANDS               Bollinger Bands
 HT_TRENDLINE         Hilbert Transform - Instantaneous Trendline
-# KAMA                 Kaufman Adaptive Moving Average
 MA                   Moving average
 MAMA                 MESA Adaptive Moving Average
 MAVP                 Moving average with variable period
@@ -19,7 +16,6 @@ MIDPOINT             MidPoint over period
 MIDPRICE             Midpoint Price over period
 SAR                  Parabolic SAR
 SAREXT               Parabolic SAR - Extended
-SMA                  Simple Moving Average
 T3                   Triple Exponential Moving Average (T3)
 TEMA                 Triple Exponential Moving Average
 TRIMA                Triangular Moving Average
@@ -59,19 +55,6 @@ STOCHRSI             Stochastic Relative Strength Index
 TRIX                 1-day Rate-Of-Change (ROC) of a Triple Smooth EMA
 ULTOSC               Ultimate Oscillator
 WILLR                Williams' %R
-```
-
-Volume Indicators
-
-```plain
-# ADOSC                Chaikin A/D Oscillator
-```
-
-Price Transform
-
-```plain
-# ATR                  Average True Range
-# NATR                 Normalized Average True Range
 ```
 
 Pattern Recognition:
@@ -139,3 +122,8 @@ CDLUNIQUE3RIVER      Unique 3 River
 CDLUPSIDEGAP2CROWS   Upside Gap Two Crows
 CDLXSIDEGAP3METHODS  Upside/Downside Gap Three Methods
 ```
+
+## Acknowledgement
+
+- [TA-Lib](https://ta-lib.org/)
+- [Python wrapper for TA-Lib](https://ta-lib.github.io/ta-lib-python/)
