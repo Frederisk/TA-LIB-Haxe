@@ -2,7 +2,7 @@
 
 Rewrite TA-LIB in Haxe.
 
-## TODO List
+## Functions TODO List
 
 Overlap Studies
 
@@ -122,6 +122,16 @@ CDLUNIQUE3RIVER      Unique 3 River
 CDLUPSIDEGAP2CROWS   Upside Gap Two Crows
 CDLXSIDEGAP3METHODS  Upside/Downside Gap Three Methods
 ```
+
+## Road Map
+
+- [ ] Simply rewrite all necessary methods according to the original project (C language project).
+- [ ] Create the necessary classes and interfaces to provide good design in the lens language.
+- [ ] Review all methods and add necessary comments.
+- [ ] Create unit tests and CI.
+- [ ] Design the class and interface of the library, and standardize the API.
+- [ ] Check the output of C#, Python, JavaScript and other languages ​​to ensure that the design goals are met.
+- [ ] Create package data and publish.
 
 ## Acknowledgement
 
