@@ -1,0 +1,15 @@
+# commons
+--class-path src
+ta
+
+--each
+# C#
+--cs out/cs/
+
+--next
+# python
+--python out/python/ta.py
+
+--next
+# js
+--js out/js/ta.js
