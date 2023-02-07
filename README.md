@@ -8,9 +8,7 @@ Overlap Studies
 
 ```plain
 # BBANDS               Bollinger Bands
-HT_TRENDLINE         Hilbert Transform - Instantaneous Trendline
 MA                   Moving average
-MAMA                 MESA Adaptive Moving Average
 MAVP                 Moving average with variable period
 MIDPOINT             MidPoint over period
 MIDPRICE             Midpoint Price over period
