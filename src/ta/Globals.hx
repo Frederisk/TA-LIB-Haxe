@@ -45,16 +45,29 @@ enum abstract Compatibility(Int) {
     var Metastock = 1;
 }
 
-enum abstract MAType(Int) {
-    var Sma = 0;
-    var Ema = 1;
-    var Wma = 2;
-    var Dema = 3;
-    var Tema = 4;
-    var Trima = 5;
-    var Kama = 6;
-    var Mama = 7;
-    var T3 = 8;
+// enum abstract MAType(Int) {
+//     var Sma = 0;
+//     var Ema = 1;
+//     var Wma = 2;
+//     var Dema = 3;
+//     var Tema = 4;
+//     var Trima = 5;
+//     var Kama = 6;
+//     var Mama = 7;
+//     var T3 = 8;
+// }
+
+@:native
+enum MAType {
+    Sma;
+    Ema;
+    Wma;
+    Dema;
+    Tema;
+    Trima;
+    Kama;
+    Mama;
+    T3;
 }
 
 // class ModuleControl {

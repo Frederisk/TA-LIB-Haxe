@@ -9,7 +9,6 @@ Overlap Studies
 ```plain
 # BBANDS               Bollinger Bands
 MA                   Moving average
-MAVP                 Moving average with variable period
 MIDPOINT             MidPoint over period
 MIDPRICE             Midpoint Price over period
 SAR                  Parabolic SAR
