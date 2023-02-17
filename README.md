@@ -9,7 +9,6 @@ Overlap Studies
 ```plain
 # BBANDS               Bollinger Bands
 MA                   Moving average
-MIDPOINT             MidPoint over period
 MIDPRICE             Midpoint Price over period
 SAR                  Parabolic SAR
 SAREXT               Parabolic SAR - Extended
