@@ -10,7 +10,6 @@ Overlap Studies
 # BBANDS               Bollinger Bands
 MA                   Moving average
 MIDPRICE             Midpoint Price over period
-SAR                  Parabolic SAR
 SAREXT               Parabolic SAR - Extended
 T3                   Triple Exponential Moving Average (T3)
 TEMA                 Triple Exponential Moving Average
@@ -35,7 +34,6 @@ MACDEXT              MACD with controllable MA type
 MACDFIX              Moving Average Convergence/Divergence Fix 12/26
 MFI                  Money Flow Index
 MINUS_DI             Minus Directional Indicator
-MINUS_DM             Minus Directional Movement
 MOM                  Momentum
 PLUS_DI              Plus Directional Indicator
 PLUS_DM              Plus Directional Movement
