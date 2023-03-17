@@ -33,7 +33,6 @@ MACD                 Moving Average Convergence/Divergence
 MACDEXT              MACD with controllable MA type
 MACDFIX              Moving Average Convergence/Divergence Fix 12/26
 MFI                  Money Flow Index
-MINUS_DI             Minus Directional Indicator
 MOM                  Momentum
 PLUS_DI              Plus Directional Indicator
 PLUS_DM              Plus Directional Movement
