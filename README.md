@@ -34,8 +34,7 @@ MACDEXT              MACD with controllable MA type
 MACDFIX              Moving Average Convergence/Divergence Fix 12/26
 MFI                  Money Flow Index
 MOM                  Momentum
-PLUS_DI              Plus Directional Indicator
-PLUS_DM              Plus Directional Movement
+Movement
 PPO                  Percentage Price Oscillator
 ROC                  Rate of change : ((price/prevPrice)-1)*100
 ROCP                 Rate of change Percentage: (price-prevPrice)/prevPrice
@@ -118,6 +117,7 @@ CDLXSIDEGAP3METHODS  Upside/Downside Gap Three Methods
 
 ## Road Map
 
+- [ ] Check `round_pos` function.
 - [ ] Simply rewrite all necessary methods according to the original project (C language project).
 - [ ] Create the necessary classes and interfaces to provide good design in the lens language.
 - [ ] Review all methods and add necessary comments.

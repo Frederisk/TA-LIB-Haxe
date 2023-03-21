@@ -4,14 +4,14 @@ import ta.func.Utility.IsZero;
 import ta.Globals.FuncUnstId;
 
 @:keep
-function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>, optInTimePeriod:Int) {
+function PlusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>, optInTimePeriod:Int) {
     var outBegIndex:Int;
     var outNBElement:Int;
     var outReal:Array<Float> = [];
 
     var today:Int, lookbackTotal:Int, outIndex:Int;
     var prevHigh:Float, prevLow:Float, prevClose:Float;
-    var prevMinusDM:Float, prevTR:Float;
+    var prevPlusDM:Float, prevTR:Float;
     var tempReal:Float, diffP:Float, diffM:Float; // tempReal2:Float
 
     var i:Int;
@@ -47,7 +47,7 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
     }
 
     if (optInTimePeriod > 1) {
-        lookbackTotal = optInTimePeriod + Globals.unstablePeriod[FuncUnstId.MinusDI];
+        lookbackTotal = optInTimePeriod + Globals.unstablePeriod[FuncUnstId.PlusDI];
     } else {
         lookbackTotal = 1;
     }
@@ -82,12 +82,12 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
             tempReal = inLow[today];
             diffM = prevLow - tempReal;
             prevLow = tempReal;
-            if ((diffM > 0) && (diffP < diffM)) {
+            if ((diffP > 0) && (diffP > diffM)) {
                 tempReal = TrueRange(prevHigh, prevLow, prevClose);
                 if (IsZero(tempReal)) {
                     outReal[outIndex++] = 0.0;
                 } else {
-                    outReal[outIndex++] = diffM / tempReal;
+                    outReal[outIndex++] = diffP / tempReal;
                 }
             } else {
                 outReal[outIndex++] = 0.0;
@@ -105,7 +105,7 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
 
     outBegIndex = today = startIndex;
 
-    prevMinusDM = 0.0;
+    prevPlusDM = 0.0;
     prevTR = 0.0;
     today = startIndex - lookbackTotal;
     prevHigh = inHigh[today];
@@ -121,8 +121,8 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
         tempReal = inLow[today];
         diffM = prevLow - tempReal;
         prevLow = tempReal;
-        if ((diffM > 0) && (diffP < diffM)) {
-            prevMinusDM += diffM;
+        if ((diffP > 0) && (diffP > diffM)) {
+            prevPlusDM += diffP;
         }
 
         tempReal = TrueRange(prevHigh, prevLow, prevClose);
@@ -130,7 +130,7 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
         prevClose = inClose[today];
     }
 
-    i = Globals.unstablePeriod[FuncUnstId.MinusDI] + 1;
+    i = Globals.unstablePeriod[FuncUnstId.PlusDI] + 1;
     while (i-- != 0) {
         today++;
         tempReal = inHigh[today];
@@ -139,10 +139,10 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
         tempReal = inLow[today];
         diffM = prevLow - tempReal;
         prevLow = tempReal;
-        if ((diffM > 0) && (diffP < diffM)) {
-            prevMinusDM = prevMinusDM - (prevMinusDM / optInTimePeriod) + diffM;
+        if ((diffP > 0) && (diffP > diffM)) {
+            prevPlusDM = prevPlusDM - (prevPlusDM / optInTimePeriod) + diffP;
         } else {
-            prevMinusDM = prevMinusDM - (prevMinusDM / optInTimePeriod);
+            prevPlusDM = prevPlusDM - (prevPlusDM / optInTimePeriod);
         }
 
         tempReal = TrueRange(prevHigh, prevLow, prevClose);
@@ -151,7 +151,7 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
     }
 
     if (!IsZero(prevTR)) {
-        outReal[0] = round_pos(100.0 * (prevMinusDM / prevTR));
+        outReal[0] = round_pos(100.0 * (prevPlusDM / prevTR));
     } else {
         outReal[0] = 0.0;
     }
@@ -165,10 +165,10 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
         tempReal = inLow[today];
         diffM = prevLow - tempReal;
         prevLow = tempReal;
-        if ((diffM > 0) && (diffP < diffM)) {
-            prevMinusDM = prevMinusDM - (prevMinusDM / optInTimePeriod) + diffM;
+        if ((diffP > 0) && (diffP > diffM)) {
+            prevPlusDM = prevPlusDM - (prevPlusDM / optInTimePeriod) + diffP;
         } else {
-            prevMinusDM = prevMinusDM - (prevMinusDM / optInTimePeriod);
+            prevPlusDM = prevPlusDM - (prevPlusDM / optInTimePeriod);
         }
 
         tempReal = TrueRange(prevHigh, prevLow, prevClose);
@@ -176,7 +176,7 @@ function MinusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
         prevClose = inClose[today];
 
         if (!IsZero(prevTR)) {
-            outReal[outIndex++] = round_pos(100.0 * (prevMinusDM / prevTR));
+            outReal[outIndex++] = round_pos(100.0 * (prevPlusDM / prevTR));
         } else {
             outReal[outIndex++] = 0.0;
         }
@@ -196,7 +196,7 @@ inline function round_pos(num:Float) {
 }
 
 @:keep
-function MinusDiLookback(optInTimePeriod:Int) {
+function PlusDiLookback(optInTimePeriod:Int) {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;
@@ -206,7 +206,7 @@ function MinusDiLookback(optInTimePeriod:Int) {
     }
 
     if (optInTimePeriod > 1) {
-        return (optInTimePeriod + Globals.unstablePeriod[FuncUnstId.MinusDI]);
+        return (optInTimePeriod + Globals.unstablePeriod[FuncUnstId.PlusDI]);
     } else {
         return 1;
     }
