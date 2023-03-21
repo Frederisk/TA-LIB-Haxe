@@ -6,7 +6,7 @@ import ta.Globals.FuncUnstId;
 function PlusDm(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Float>, optInTimePeriod:Int) {
     var outBegIndex:Int;
     var outNBElement:Int;
-    var outReal:Array<Float>;
+    var outReal:Array<Float> = [];
 
     var today:Int, lookbackTotal:Int, outIndex:Int;
     var prevHigh:Float, prevLow:Float, tempReal:Float;

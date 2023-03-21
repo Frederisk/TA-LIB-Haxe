@@ -65,3 +65,19 @@ inline function IsZeroOrNeg(v:Float):Bool {
 inline function PerToK(per:Float) {
     return (2.0 / (per + 1));
 }
+
+
+// private function
+
+inline function TrueRange(th:Float, tl:Float, yc:Float) {
+    var out = th - tl;
+    var tempReal2 = Math.abs(th - yc);
+    if (tempReal2 > out) {
+        out = tempReal2;
+    }
+    tempReal2 = Math.abs(tl - yc);
+    if (tempReal2 > out) {
+        out = tempReal2;
+    }
+    return out;
+}

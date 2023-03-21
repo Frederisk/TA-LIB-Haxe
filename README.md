@@ -20,11 +20,7 @@ WMA                  Weighted Moving Average
 Momentum Indicators
 
 ```plain
-ADX                  Average Directional Movement Index
-ADXR                 Average Directional Movement Index Rating
-APO                  Absolute Price Oscillator
-AROON                Aroon
-AROONOSC             Aroon Oscillator
+#APO                  Absolute Price Oscillator
 BOP                  Balance Of Power
 CCI                  Commodity Channel Index
 CMO                  Chande Momentum Oscillator
@@ -34,7 +30,6 @@ MACDEXT              MACD with controllable MA type
 MACDFIX              Moving Average Convergence/Divergence Fix 12/26
 MFI                  Money Flow Index
 MOM                  Momentum
-Movement
 PPO                  Percentage Price Oscillator
 ROC                  Rate of change : ((price/prevPrice)-1)*100
 ROCP                 Rate of change Percentage: (price-prevPrice)/prevPrice

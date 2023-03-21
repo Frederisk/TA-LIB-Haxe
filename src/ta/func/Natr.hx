@@ -94,10 +94,11 @@ function Natr(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Flo
 
     outIndex = 1;
     tempValue = inClose[today];
-    if (!IsZero(tempValue))
+    if (!IsZero(tempValue)) {
         outReal[0] = (prevATR / tempValue) * 100.0;
-    else
+    } else {
         outReal[0] = 0.0;
+    }
 
     nbATR = (endIndex - startIndex) + 1;
 
@@ -106,10 +107,11 @@ function Natr(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Flo
         prevATR += tempBuffer[today++];
         prevATR /= optInTimePeriod;
         tempValue = inClose[today];
-        if (!IsZero(tempValue))
+        if (!IsZero(tempValue)) {
             outReal[outIndex] = (prevATR / tempValue) * 100.0;
-        else
+        } else {
             outReal[0] = 0.0;
+        }
         outIndex++;
     }
 

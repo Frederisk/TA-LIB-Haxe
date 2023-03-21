@@ -1,6 +1,7 @@
 package ta.func;
 
 import ta.func.Utility.IsZero;
+import ta.func.Utility.TrueRange;
 import ta.Globals.FuncUnstId;
 
 @:keep
@@ -16,18 +17,18 @@ function PlusDi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 
     var i:Int;
 
-    inline function TrueRange(th:Float, tl:Float, yc:Float) {
-        var out = th - tl;
-        var tempReal2 = Math.abs(th - yc);
-        if (tempReal2 > out) {
-            out = tempReal2;
-        }
-        tempReal2 = Math.abs(tl - yc);
-        if (tempReal2 > out) {
-            out = tempReal2;
-        }
-        return out;
-    }
+    // inline function TrueRange(th:Float, tl:Float, yc:Float) {
+    //     var out = th - tl;
+    //     var tempReal2 = Math.abs(th - yc);
+    //     if (tempReal2 > out) {
+    //         out = tempReal2;
+    //     }
+    //     tempReal2 = Math.abs(tl - yc);
+    //     if (tempReal2 > out) {
+    //         out = tempReal2;
+    //     }
+    //     return out;
+    // }
 
     if (startIndex < 0) {
         throw new TAException(OutOfRangeStartIndex);
