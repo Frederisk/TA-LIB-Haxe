@@ -6,8 +6,16 @@ using haxe.EnumTools;
 
 @:keep @:keepSub
 class TAException extends Exception {
-    public function new(status:ExceptionStatus) {
-        super(status.getName());
+    public function new(status:ExceptionStatus, ?message:String) {
+        // TODO: Make the message clearer
+        super((message == null) ? (status.getName()) : (status.getName() + ";" + message));
+
+        // if(message == null){
+        //     super(status.getName());
+        // }else{
+        //     super(status.getName() + ";" + message);
+        // }
+
         if (status == Success) {
             throw new Exception('You Should NOT throw exception when your task is successful');
         }

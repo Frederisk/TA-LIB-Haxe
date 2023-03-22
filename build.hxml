@@ -13,3 +13,7 @@ ta
 --next
 # js
 --js out/js/ta.js
+
+--next
+# java
+--java out/java

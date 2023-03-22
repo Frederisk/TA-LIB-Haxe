@@ -21,11 +21,6 @@ Momentum Indicators
 
 ```plain
 #APO                  Absolute Price Oscillator
-BOP                  Balance Of Power
-CCI                  Commodity Channel Index
-CMO                  Chande Momentum Oscillator
-DX                   Directional Movement Index
-MACD                 Moving Average Convergence/Divergence
 MACDEXT              MACD with controllable MA type
 MACDFIX              Moving Average Convergence/Divergence Fix 12/26
 MFI                  Money Flow Index
@@ -120,6 +115,12 @@ CDLXSIDEGAP3METHODS  Upside/Downside Gap Three Methods
 - [ ] Design the class and interface of the library, and standardize the API.
 - [ ] Check the output of C#, Python, JavaScript and other languages ​​to ensure that the design goals are met.
 - [ ] Create package data and publish.
+
+## Idea
+
+- [ ] Use `haxe.ds.Vector` instead of `Array` for better performance.
+- [ ] For `TAException`, when `ExceptionStatus` is `InternalError`, a field or message is required to hold the error `ID`.
+- [ ] The type `abstract` will lose their type when compiled into targets. So it should be avoided.
 
 ## Acknowledgement
 
