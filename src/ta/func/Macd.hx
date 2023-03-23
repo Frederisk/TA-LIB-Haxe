@@ -21,7 +21,6 @@ function Macd(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPeriod
     if (inReal == null) {
         throw new TAException(BadParam);
     }
-
     // INTEGER_DEFAULT
     // if(optInFastPeriod == null || ){
     //     optInFastPeriod = 12;
@@ -43,6 +42,8 @@ function Macd(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPeriod
     if (optInSignalPeriod < 1) {
         throw new TAException(BadParam);
     }
+
+    return IntMacd(startIndex, endIndex, inReal, optInFastPeriod, optInSlowPeriod, optInSignalPeriod);
 }
 
 @:keep
@@ -71,16 +72,16 @@ function IntMacd(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPer
         optInFastPeriod = tempInteger;
     }
 
-    if (optInSlowPeriod != 0)
-        {k1 = PerToK(optInSlowPeriod);}
-    else {
+    if (optInSlowPeriod != 0) {
+        k1 = PerToK(optInSlowPeriod);
+    } else {
         optInSlowPeriod = 26;
         k1 = 0.075;
     }
 
-    if (optInFastPeriod != 0)
-       { k2 = PerToK(optInFastPeriod);}
-    else {
+    if (optInFastPeriod != 0) {
+        k2 = PerToK(optInFastPeriod);
+    } else {
         optInFastPeriod = 12;
         k2 = 0.15;
     }
@@ -126,10 +127,10 @@ function IntMacd(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPer
     tempInteger = startIndex - lookbackSignal;
 
     // retCode = FUNCTION_CALL(INT_EMA)( VALUE_HANDLE_OUT(outBegIndex1), VALUE_HANDLE_OUT(outNbElement1), slowEMABuffer);
-    ret = IntEma(tempInteger, endIndex, inReal, optInSlowPeriod,k1);
-outBegIndex1 = ret.outBegIndex;
-outNbElement1 = ret.outNBElement;
-slowEMABuffer = ret.outReal;
+    ret = IntEma(tempInteger, endIndex, inReal, optInSlowPeriod, k1);
+    outBegIndex1 = ret.outBegIndex;
+    outNbElement1 = ret.outNBElement;
+    slowEMABuffer = ret.outReal;
 
     //    if( retCode != ENUM_VALUE(RetCode,TA_SUCCESS,Success) )
     //    {
@@ -143,8 +144,8 @@ slowEMABuffer = ret.outReal;
     // retCode = FUNCTION_CALL(INT_EMA)( VALUE_HANDLE_OUT(outBegIndex2), VALUE_HANDLE_OUT(outNbElement2), fastEMABuffer);
     ret = IntEma(tempInteger, endIndex, inReal, optInFastPeriod, k2);
     outBegIndex2 = ret.outBegIndex;
-    outNbElement2 =ret.outNBElement;
-    fastEMABuffer =ret.outReal;
+    outNbElement2 = ret.outNBElement;
+    fastEMABuffer = ret.outReal;
 
     //    if( retCode != ENUM_VALUE(RetCode,TA_SUCCESS,Success) )
     //    {
@@ -164,7 +165,7 @@ slowEMABuffer = ret.outReal;
         // ARRAY_FREE(fastEMABuffer);
         // ARRAY_FREE(slowEMABuffer);
         // return TA_INTERNAL_ERROR(119);
-        throw new TAException(InternalError,"ID:119");
+        throw new TAException(InternalError, "ID:119");
     }
 
     i = 0;
@@ -180,9 +181,9 @@ slowEMABuffer = ret.outReal;
 
     // retCode = FUNCTION_CALL_DOUBLE(INT_EMA)(0, VALUE_HANDLE_GET(outNbElement1) - 1, fastEMABuffer, optInSignalPeriod_2, PER_TO_K(optInSignalPeriod_2), VALUE_HANDLE_OUT(outBegIndex2), VALUE_HANDLE_OUT(outNbElement2), outMACDSignal);
     ret = IntEma(0, outNbElement1 - 1, fastEMABuffer, optInSignalPeriod_2, PerToK(optInSignalPeriod_2));
-    outBegIndex2= ret.outBegIndex;
-    outNbElement2=ret.outNBElement;
-    outMACDSignal=ret.outReal;
+    outBegIndex2 = ret.outBegIndex;
+    outNbElement2 = ret.outNBElement;
+    outMACDSignal = ret.outReal;
 
     // ARRAY_FREE(fastEMABuffer);
     // ARRAY_FREE(slowEMABuffer);
@@ -203,13 +204,13 @@ slowEMABuffer = ret.outReal;
     outBegIndex = startIndex;
     outNBElement = outNbElement2;
 
-        return {
-            outBegIndex: outBegIndex,
-            outNBElement: outNBElement,
-            outMACD: outMACD,
-            outMACDSignal: outMACDSignal,
-            outMACDHist: outMACDHist
-        };
+    return {
+        outBegIndex: outBegIndex,
+        outNBElement: outNBElement,
+        outMACD: outMACD,
+        outMACDSignal: outMACDSignal,
+        outMACDHist: outMACDHist
+    };
 }
 
 @:keep
