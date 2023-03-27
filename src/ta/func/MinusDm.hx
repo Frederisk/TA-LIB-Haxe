@@ -31,13 +31,15 @@ function MinusDm(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<
         throw new TAException(BadParam);
     }
 
-    if (optInTimePeriod > 1)
+    if (optInTimePeriod > 1) {
         lookbackTotal = optInTimePeriod + Globals.unstablePeriod[FuncUnstId.MinusDM] - 1;
-    else
+    } else {
         lookbackTotal = 1;
+    }
 
-    if (startIndex < lookbackTotal)
+    if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
+    }
 
     if (startIndex > endIndex) {
         outBegIndex = 0;

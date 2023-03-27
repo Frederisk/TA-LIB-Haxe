@@ -22,8 +22,6 @@ Momentum Indicators
 ```plain
 #APO                  Absolute Price Oscillator
 #MACDEXT              MACD with controllable MA type
-#MFI                  Money Flow Index
-MOM                  Momentum
 PPO                  Percentage Price Oscillator
 ROC                  Rate of change : ((price/prevPrice)-1)*100
 ROCP                 Rate of change Percentage: (price-prevPrice)/prevPrice
