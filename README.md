@@ -23,9 +23,7 @@ Momentum Indicators
 #APO                  Absolute Price Oscillator
 #MACDEXT              MACD with controllable MA type
 PPO                  Percentage Price Oscillator
-ROC                  Rate of change : ((price/prevPrice)-1)*100
-ROCP                 Rate of change Percentage: (price-prevPrice)/prevPrice
-ROCR                 Rate of change ratio: (price/prevPrice)
+#ROCR                 Rate of change ratio: (price/prevPrice)
 ROCR100              Rate of change ratio 100 scale: (price/prevPrice)*100
 RSI                  Relative Strength Index
 STOCH                Stochastic
