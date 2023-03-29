@@ -25,9 +25,6 @@ Momentum Indicators
 #MFI                  Money Flow Index
 MOM                  Momentum
 PPO                  Percentage Price Oscillator
-#ROCR                 Rate of change ratio: (price/prevPrice)
-ROCR100              Rate of change ratio 100 scale: (price/prevPrice)*100
-RSI                  Relative Strength Index
 STOCH                Stochastic
 STOCHF               Stochastic Fast
 STOCHRSI             Stochastic Relative Strength Index
