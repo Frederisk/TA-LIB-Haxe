@@ -26,7 +26,6 @@ PPO                  Percentage Price Oscillator
 STOCH                Stochastic
 STOCHF               Stochastic Fast
 STOCHRSI             Stochastic Relative Strength Index
-ULTOSC               Ultimate Oscillator
 WILLR                Williams' %R
 ```
 
