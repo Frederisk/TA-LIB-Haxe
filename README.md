@@ -26,7 +26,6 @@ PPO                  Percentage Price Oscillator
 STOCH                Stochastic
 STOCHF               Stochastic Fast
 STOCHRSI             Stochastic Relative Strength Index
-TRIX                 1-day Rate-Of-Change (ROC) of a Triple Smooth EMA
 ULTOSC               Ultimate Oscillator
 WILLR                Williams' %R
 ```
