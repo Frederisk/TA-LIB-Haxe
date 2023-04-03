@@ -23,9 +23,9 @@ function UltOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
     var i:Int, j:Int, today:Int, outIndex:Int;
     var trailingIndex1:Int, trailingIndex2:Int, trailingIndex3:Int;
 
-    var usedFlag:Array<Int>; // No initialization required
-    var periods:Array<Int>; // No initialization required
-    var sortedPeriods:Array<Int>; // No initialization required
+    var usedFlag:Array<Int> = [];
+    var periods:Array<Int> = [];
+    var sortedPeriods:Array<Int> = [];
 
     if (startIndex < 0) {
         throw new TAException(OutOfRangeStartIndex);
@@ -138,9 +138,9 @@ function UltOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
     //          trueRange = tempDouble;                  \
     //    }
 
-    inline function PromeTotals(aTotal:Float, bTotal:Float, period:Int) {
-        aTotal = 0;
-        bTotal = 0;
+    inline function PromeTotals(period:Int) {
+        var aTotal = 0.0;
+        var bTotal = 0.0;
 
         i = startIndex - period + 1;
         while (i < startIndex) {
@@ -150,6 +150,7 @@ function UltOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 
             ++i;
         }
+        return {aTotal: aTotal, bTotal: bTotal};
     }
 
     //    #define PRIME_TOTALS(aTotal, bTotal, period)                 \
@@ -164,9 +165,15 @@ function UltOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
     //       }                                                         \
     //    }
 
-    PromeTotals(a1Total, b1Total, optInTimePeriod1);
-    PromeTotals(a2Total, b2Total, optInTimePeriod2);
-    PromeTotals(a3Total, b3Total, optInTimePeriod3);
+    var r = PromeTotals(optInTimePeriod1);
+    a1Total = r.aTotal;
+    b1Total = r.bTotal;
+    var r = PromeTotals(optInTimePeriod2);
+    a2Total = r.aTotal;
+    b2Total = r.bTotal;
+    var r = PromeTotals(optInTimePeriod3);
+    a3Total = r.aTotal;
+    b3Total = r.bTotal;
 
     //    #undef PRIME_TOTALS
 
