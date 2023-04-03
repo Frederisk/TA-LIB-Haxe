@@ -1,5 +1,6 @@
 package ta.func;
 
+import ta.func.Ma;
 import ta.func.Ma.MaLookback;
 import ta.Globals.MAType;
 
@@ -16,7 +17,7 @@ function Mavp(startIndex:Int, endIndex:Int, inReal:Array<Float>, inPeriods:Array
         tempInt:Int,
         curPeriod:Int;
 
-    var localPeriodArray:Array<Int>; // No initialization required
+    var localPeriodArray:Array<Int> = [];
     var localOutputArray:Array<Float>; // No initialization required
     var localBegIndex:Int;
     var localNbElement:Int;
@@ -81,7 +82,6 @@ function Mavp(startIndex:Int, endIndex:Int, inReal:Array<Float>, inPeriods:Array
         };
     }
     outputSize = endIndex - tempInt + 1;
-
     // ARRAY_ALLOC(localOutputArray, outputSize);
     // ARRAY_INT_ALLOC(localPeriodArray, outputSize);
 

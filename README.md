@@ -4,19 +4,6 @@ Rewrite TA-LIB in Haxe.
 
 ## Functions TODO List
 
-Overlap Studies
-
-```plain
-# BBANDS               Bollinger Bands
-MA                   Moving average
-MIDPRICE             Midpoint Price over period
-SAREXT               Parabolic SAR - Extended
-T3                   Triple Exponential Moving Average (T3)
-TEMA                 Triple Exponential Moving Average
-TRIMA                Triangular Moving Average
-WMA                  Weighted Moving Average
-```
-
 Momentum Indicators
 
 ```plain

@@ -36,7 +36,7 @@ function StdDev(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
     }
 
     ret = IntVar(startIndex, endIndex, inReal, optInTimePeriod);
-    // ret = IntVar(startIdx, endIdx, inReal, optInTimePeriod, outBegIdx, outNBElement, outReal);
+    // ret = IntVar(startIndex, endIndex, inReal, optInTimePeriod, outBegIndex, outNBElement, outReal);
     var outBegIndex:Int = ret.outBegIndex;
     var outNBElement:Int = ret.outNBElement;
     var outReal:Array<Float> = ret.outReal;
@@ -72,6 +72,57 @@ function StdDev(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
         outNBElement: outNBElement,
         outReal: outReal
     };
+}
+
+function IntStdDevUsingPrecalcMa(inReal:Array<Float>, inMovAvg:Array<Float>, inMovAvgBegIndex:Int, inMovAvgNbElement:Int, timePeriod:Int) {
+    var output:Array<Float> = [];
+
+    var tempReal:Float, periodTotal2:Float, meanValue2:Float;
+    var outIndex:Int;
+
+    var startSum:Int, endSum:Int;
+
+    startSum = 1 + inMovAvgBegIndex - timePeriod;
+    endSum = inMovAvgBegIndex;
+
+    periodTotal2 = 0;
+
+    outIndex = startSum;
+    while (outIndex < endSum) {
+
+        tempReal = inReal[outIndex];
+        tempReal *= tempReal;
+        periodTotal2 += tempReal;
+
+        outIndex++;
+    }
+
+    outIndex = 0;
+    while (outIndex < inMovAvgNbElement) {
+        tempReal = inReal[endSum];
+        tempReal *= tempReal;
+        periodTotal2 += tempReal;
+        meanValue2 = periodTotal2 / timePeriod;
+
+        tempReal = inReal[startSum];
+        tempReal *= tempReal;
+        periodTotal2 -= tempReal;
+
+        tempReal = inMovAvg[outIndex];
+        tempReal *= tempReal;
+        meanValue2 -= tempReal;
+
+        if (!IsZeroOrNeg(meanValue2)) {
+            output[outIndex] = Math.sqrt(meanValue2);
+        } else {
+            output[outIndex] = 0.0;
+        }
+
+        outIndex++;
+        startSum++;
+        endSum++;
+    }
+    return output;
 }
 
 @:keep
