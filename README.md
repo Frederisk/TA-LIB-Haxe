@@ -4,15 +4,6 @@ Rewrite TA-LIB in Haxe.
 
 ## Functions TODO List
 
-Momentum Indicators
-
-```plain
-STOCH                Stochastic
-STOCHF               Stochastic Fast
-STOCHRSI             Stochastic Relative Strength Index
-WILLR                Williams' %R
-```
-
 Pattern Recognition:
 
 ```plain
