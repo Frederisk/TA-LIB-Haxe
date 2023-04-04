@@ -7,9 +7,6 @@ Rewrite TA-LIB in Haxe.
 Momentum Indicators
 
 ```plain
-#APO                  Absolute Price Oscillator
-#MACDEXT              MACD with controllable MA type
-PPO                  Percentage Price Oscillator
 STOCH                Stochastic
 STOCHF               Stochastic Fast
 STOCHRSI             Stochastic Relative Strength Index
