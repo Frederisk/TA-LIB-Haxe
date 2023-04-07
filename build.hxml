@@ -17,3 +17,7 @@ ta
 --next
 # java
 --java out/java
+
+--next
+#Lua
+--lua out/ta.lua
