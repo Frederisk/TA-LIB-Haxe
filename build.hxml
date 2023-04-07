@@ -20,4 +20,4 @@ ta
 
 --next
 #Lua
---lua out/ta.lua
+--lua out/lua/ta.lua
