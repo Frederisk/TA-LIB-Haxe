@@ -67,32 +67,118 @@ inline function PerToK(per:Float) {
 }
 
 /**
+ * TA_REALBODY
+ * @param index
+ * @param inOpen
+ * @param inClose
+ */
+inline function RealBody(index:Int, inOpen:Array<Float>, inClose:Array<Float>) {
+    return Math.abs(inClose[index] - inOpen[index]);
+}
+
+/**
+ * TA_UPPERSHADOW
+ * @param index
+ * @param inOpen
+ * @param inHigh
+ * @param inClose
+ */
+inline function UpperShadow(index:Int, inOpen:Array<Float>, inHigh:Array<Float>, inClose:Array<Float>) {
+    return (inHigh[index] - (inClose[index] >= inOpen[index] ? inClose[index] : inOpen[index]));
+}
+
+/**
+ * TA_LOWERSHADOW
+ * @param index
+ * @param inOpen
+ * @param inLow
+ * @param inClose
+ */
+inline function LowerShadow(index:Int, inOpen:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
+    return ((inClose[index] >= inOpen[index] ? inOpen[index] : inClose[index]) - inLow[index]);
+}
+
+/**
+ * TA_HIGHLOWRANGE
+ * @param index
+ * @param inHigh
+ * @param inLow
+ */
+inline function HighLowRange(index:Int, inHigh:Array<Float>, inLow:Array<Float>) {
+    return (inHigh[index] - inLow[index]);
+}
+
+/**
+ * TA_CANDLECOLOR
+ * @param index
+ * @param inOpen
+ * @param inClose
+ */
+inline function CandleColor(index:Int, inOpen:Array<Float>, inClose:Array<Float>) {
+    return (inClose[index] >= inOpen[index] ? 1 : -1);
+}
+
+/**
  * TA_CANDLERANGE
  */
 inline function CandleRange(set:CandleSettingType, index:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
     return
-    ((Globals.candleSettings[set].rangeType == RangeType.RealBody) ?
-        Math.abs(inClose[index] - inOpen[index]) :
-        ((Globals.candleSettings[set].rangeType == RangeType.HighLow) ?
-            (inHigh[index] - inLow[index]) :
-            ((Globals.candleSettings[set].rangeType == RangeType.Shadows) ?
-                (inHigh[index] - (inClose[index] >= inOpen[index] ? inClose[index] : inOpen[index])) +
-                ((inClose[index] >= inOpen[index] ? inOpen[index] : inClose[index]) - inLow[index]) : 0)));
+        ((Globals.candleSettings[set].rangeType == RangeType.RealBody) ? RealBody(index, inOpen, inClose) :
+        ((Globals.candleSettings[set].rangeType == RangeType.HighLow) ? HighLowRange(index, inHigh, inLow) :
+        ((Globals.candleSettings[set].rangeType == RangeType.Shadows) ? UpperShadow(index, inOpen, inHigh, inClose) + LowerShadow(index, inOpen, inLow, inClose) : 0)));
 }
 
 /**
  * TA_CANDLEAVERAGE
  */
- inline function CandleAverage(set:CandleSettingType, sum:Int, index:Int,inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>){
-    return
-    (Globals.candleSettings[set].factor *
-        (Globals.candleSettings[set].avgPeriod != 0.0 ?
-            sum / Globals.candleSettings[set].avgPeriod :
-            CandleRange(set, index,inOpen, inHigh, inLow, inClose)) /
-        (Globals.candleSettings[set].rangeType == RangeType.Shadows ?
-            2.0 :
-            1.0));
- }
+inline function CandleAverage(set:CandleSettingType, sum:Float, index:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
+    return (Globals.candleSettings[set].factor * (Globals.candleSettings[set].avgPeriod != 0.0 ? sum / Globals.candleSettings[set].avgPeriod : CandleRange(set,
+        index, inOpen, inHigh, inLow, inClose)) / (Globals.candleSettings[set].rangeType == RangeType.Shadows ? 2.0 : 1.0));
+}
+
+/**
+ * TA_REALBODYGAPUP
+ * @param index2
+ * @param index1
+ * @param inOpen
+ * @param inClose
+ */
+inline function RealBodyGapUp(index2:Int, index1:Int, inOpen:Array<Float>, inClose:Array<Float>) {
+    return (Math.min(inOpen[index2], inClose[index2]) > Math.max(inOpen[index1], inClose[index1]));
+}
+
+/**
+ * TA_REALBODYGAPDOWN
+ * @param index2
+ * @param index1
+ * @param inOpen
+ * @param inClose
+ */
+inline function RealBodyGapDown(index2:Int, index1:Int, inOpen:Array<Float>, inClose:Array<Float>) {
+    return (Math.max(inOpen[index2], inClose[index2]) > Math.min(inOpen[index1], inClose[index1]));
+}
+
+/**
+ * TA_CANDLEGAPUP
+ * @param index2
+ * @param index1
+ * @param inHigh
+ * @param inLow
+ */
+inline function CandleGapUp(index2:Int, index1:Int, inHigh:Array<Float>, inLow:Array<Float>){
+    return (inLow[index2] > inHigh[index1]);
+}
+
+/**
+ * TA_CANDLEGAPDOWN
+ * @param index2
+ * @param index1
+ * @param inHigh
+ * @param inLow
+ */
+inline function CandleGapDown(index2:Int, index1:Int, inHigh:Array<Float>, inLow:Array<Float>){
+    return (inHigh[index2] > inLow[index1]);
+}
 
 //////////////////////
 // private function
