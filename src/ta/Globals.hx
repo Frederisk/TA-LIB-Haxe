@@ -20,7 +20,7 @@ final class Globals {
 
     public static final candleSettings:Array<CandleSetting> = getCandleDefaultSettings();
 
-    private static function getCandleDefaultSettings():Array<CandleSetting> {
+    private inline static function getCandleDefaultSettings():Array<CandleSetting> {
         return [
             {
                 settingType: CandleSettingType.BodyLong,
@@ -134,12 +134,13 @@ enum abstract FuncUnstId(Int) to Int {
     var FuncUnstNone = -1;
 }
 
-enum abstract Compatibility(Int) {
-    var Default = 0;
-    var Metastock = 1;
+@:nativeGen
+enum Compatibility {
+    Default;
+    Metastock;
 }
 
-@:native
+@:nativeGen
 enum MAType {
     Sma;
     Ema;

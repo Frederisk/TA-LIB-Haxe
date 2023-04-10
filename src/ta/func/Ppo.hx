@@ -1,5 +1,6 @@
 package ta.func;
 
+import ta.func.Utility.TAIntMax;
 import ta.func.Apo.IntPo;
 import ta.func.Ma.MaLookback;
 import ta.Globals.MAType;
@@ -70,5 +71,5 @@ function PpoLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInMAType:MATyp
         optInMAType = MAType.Sma;
     }
 
-    return MaLookback(((optInSlowPeriod > optInFastPeriod) ? optInSlowPeriod : optInFastPeriod), optInMAType);
+    return MaLookback(TAIntMax(optInSlowPeriod, optInFastPeriod), optInMAType);
 }

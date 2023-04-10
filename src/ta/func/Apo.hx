@@ -1,5 +1,6 @@
 package ta.func;
 
+import ta.func.Utility.TAIntMax;
 import ta.func.Utility.IsZero;
 import ta.Globals.MAType;
 import ta.func.Ma.Ma;
@@ -47,7 +48,7 @@ function Apo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPeriod:
     //          return ENUM_VALUE(RetCode,TA_ALLOC_ERR,AllocErr);
     //    #endif
 
-    ret = IntPo(startIndex, endIndex, inReal, optInFastPeriod, optInSlowPeriod, optInMAType,0);
+    ret = IntPo(startIndex, endIndex, inReal, optInFastPeriod, optInSlowPeriod, optInMAType, 0);
 
     return ret;
 }
@@ -72,7 +73,7 @@ function ApoLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInMAType:MATyp
         optInMAType = MAType.Sma;
     }
 
-    return MaLookback(((optInSlowPeriod > optInFastPeriod) ? optInSlowPeriod : optInFastPeriod), optInMAType);
+    return MaLookback(TAIntMax(optInSlowPeriod, optInFastPeriod), optInMAType);
 }
 
 @:keep
@@ -133,7 +134,6 @@ function IntPo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPerio
         i = 0;
         j = tempInteger;
         while (i < outNbElement1) {
-
             outReal[i] = tempBuffer[j] - outReal[i];
 
             i++;
@@ -155,4 +155,5 @@ function IntPo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPerio
         outBegIndex: outBegIndex,
         outNBElement: outNBElement,
         outReal: outReal
-    };}
+    };
+}

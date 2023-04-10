@@ -1,5 +1,6 @@
 package ta.func;
 
+import ta.func.Utility.TAIntMax;
 import ta.func.Utility.IsZero;
 import ta.func.Sma.SmaLookback;
 
@@ -261,8 +262,6 @@ function UltOscLookback(optInTimePeriod1:Int, optInTimePeriod2:Int, optInTimePer
         return -1;
     }
 
-    // maxPeriod = Math.max(Math.max(optInTimePeriod1, optInTimePeriod2), optInTimePeriod3);
-    maxPeriod = (optInTimePeriod1 > optInTimePeriod2) ? optInTimePeriod1 : optInTimePeriod2;
-    maxPeriod = (maxPeriod > optInTimePeriod3) ? maxPeriod : optInTimePeriod3;
+    maxPeriod = TAIntMax(TAIntMax(optInTimePeriod1, optInTimePeriod2), optInTimePeriod3);
     return (SmaLookback(maxPeriod) + 1);
 }
