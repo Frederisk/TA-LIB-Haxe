@@ -21,3 +21,8 @@ ta
 --next
 #Lua
 --lua out/lua/ta.lua
+
+--next
+# HashLink
+--hl out/hl/ta.c
+-D hlgen.makefile=vs2019

@@ -7,7 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDL3LINESTRIKE       Three-Line Strike
 CDL3OUTSIDE          Three Outside Up/Down
 CDL3STARSINSOUTH     Three Stars In The South
 CDL3WHITESOLDIERS    Three Advancing White Soldiers
