@@ -89,8 +89,7 @@ function Cdl3BlackCrows(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
             ShadowVeryShortPeriodTotal[totIndex] += CandleRange(CandleSettingType.ShadowVeryShort, i - totIndex, inOpen, inHigh, inLow, inClose)
                 - CandleRange(CandleSettingType.ShadowVeryShort, ShadowVeryShortTrailingIndex - totIndex, inOpen, inHigh, inLow, inClose);
 
-            --
-            totIndex;
+            totIndex--;
         }
         i++;
         ShadowVeryShortTrailingIndex++;

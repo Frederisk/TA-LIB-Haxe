@@ -46,7 +46,7 @@ function Mfi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Floa
     //         return TA_ALLOC_ERR;
     // } else
     //     mflow = & local_mflow[0];
-    mflow = [for (i in 0...optInTimePeriod) new MoneyFlow()];
+    mflow = [for (_ in 0...optInTimePeriod) new MoneyFlow()];
     maxIndex_mflow = (optInTimePeriod - 1);
     mflow_Index = 0;
 
@@ -140,7 +140,7 @@ function Mfi(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Floa
             // CIRCBUF_NEXT(mflow);
             // mflow_Index++;
             // if (mflow_Index > maxIndex_mflow)
-            //     mflow_Index = 0;
+            //     {mflow_Index = 0;}
             mflow_Index++;
             if (mflow_Index > maxIndex_mflow) {
                 mflow_Index = 0;

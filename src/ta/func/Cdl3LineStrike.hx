@@ -66,7 +66,7 @@ function Cdl3LineStrike(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
                 inClose[i - 3]) - CandleAverage(CandleSettingType.Near, NearPeriodTotal[3], i - 3, inOpen, inHigh, inLow, inClose)
             && inOpen[i - 2] <= Math.max(inOpen[i - 3],
                 inClose[i - 3]) + CandleAverage(CandleSettingType.Near, NearPeriodTotal[3], i - 3, inOpen, inHigh, inLow, inClose)
-            && inOpen[i - 1] >=Math.min(inOpen[i - 2],
+            && inOpen[i - 1] >= Math.min(inOpen[i - 2],
                 inClose[i - 2]) - CandleAverage(CandleSettingType.Near, NearPeriodTotal[2], i - 2, inOpen, inHigh, inLow, inClose)
             && inOpen[i - 1] <= Math.max(inOpen[i - 2],
                 inClose[i - 2]) + CandleAverage(CandleSettingType.Near, NearPeriodTotal[2], i - 2, inOpen, inHigh, inLow, inClose)
@@ -90,8 +90,7 @@ function Cdl3LineStrike(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
             NearPeriodTotal[totIndex] += CandleRange(CandleSettingType.Near, i - totIndex, inOpen, inHigh, inLow, inClose)
                 - CandleRange(CandleSettingType.Near, NearTrailingIndex - totIndex, inOpen, inHigh, inLow, inClose);
 
-            --
-            totIndex;
+            totIndex--;
         }
         i++;
         NearTrailingIndex++;
