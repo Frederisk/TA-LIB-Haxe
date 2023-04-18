@@ -7,8 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDL3STARSINSOUTH     Three Stars In The South
-CDL3WHITESOLDIERS    Three Advancing White Soldiers
 CDLABANDONEDBABY     Abandoned Baby
 CDLADVANCEBLOCK      Advance Block
 CDLBELTHOLD          Belt-hold
