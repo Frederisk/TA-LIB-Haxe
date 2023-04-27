@@ -35,6 +35,10 @@ function CdlAbandonedBaby(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inH
     if (inOpen == null || inHigh == null || inLow == null || inClose == null) {
         throw new TAException(BadParam);
     }
+    // DEFAULT FLOAT
+    // if (optInPenetration == null) {
+    //     optInPenetration = 3.000000e-1;
+    // }
     if (optInPenetration < 0) {
         throw new TAException(BadParam);
     }
@@ -123,6 +127,7 @@ function CdlAbandonedBaby(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inH
 
 @:keep
 function CdlAbandonedBabyLookback(optInPenetration:Float) {
+    // DEFAULT FLOAT
     // if (optInPenetration == null) {
     //     optInPenetration = 3.000000e-1;
     // }

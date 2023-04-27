@@ -7,8 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLADVANCEBLOCK      Advance Block
-CDLBELTHOLD          Belt-hold
 CDLBREAKAWAY         Breakaway
 CDLCLOSINGMARUBOZU   Closing Marubozu
 CDLCONCEALBABYSWALL  Concealing Baby Swallow
