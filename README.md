@@ -7,9 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLBREAKAWAY         Breakaway
-CDLCLOSINGMARUBOZU   Closing Marubozu
-CDLCONCEALBABYSWALL  Concealing Baby Swallow
 CDLCOUNTERATTACK     Counterattack
 CDLDARKCLOUDCOVER    Dark Cloud Cover
 CDLDOJI              Doji
