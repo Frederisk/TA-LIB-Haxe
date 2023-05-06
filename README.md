@@ -7,9 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLCOUNTERATTACK     Counterattack
-CDLDARKCLOUDCOVER    Dark Cloud Cover
-CDLDOJI              Doji
 CDLDOJISTAR          Doji Star
 CDLDRAGONFLYDOJI     Dragonfly Doji
 CDLENGULFING         Engulfing Pattern
