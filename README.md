@@ -7,9 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLEVENINGDOJISTAR   Evening Doji Star
-CDLEVENINGSTAR       Evening Star
-CDLGAPSIDESIDEWHITE  Up/Down-gap side-by-side white lines
 CDLGRAVESTONEDOJI    Gravestone Doji
 CDLHAMMER            Hammer
 CDLHANGINGMAN        Hanging Man

@@ -3,9 +3,9 @@ using namespace System.Collections.Generic;
 using namespace System.Text.RegularExpressions;
 
 # Write-Verbose -Message 'Get file content.';
-$file_name = 'CdlEveningDojiStar';
-$file_path = '.\src\ta\func\' + $file_name + '.hx';
-$source = Get-Content -Path $file_path -Raw;
+[String]$file_name = 'CdlGapSideSideWhite';
+[String]$file_path = '.\src\ta\func\' + $file_name + '.hx';
+[String]$source = Get-Content -Path $file_path -Raw;
 
 # Write-Verbose -Message 'Replace `TA_CANDLEAVGPERIOD(arg)` to `Globals.candleSettings[arg].avgPeriod`.';
 $source = [Regex]::Replace($source, 'TA_CANDLEAVGPERIOD\((?<type_name>\w*?)\)', 'Globals.candleSettings[${type_name}].avgPeriod');
@@ -44,6 +44,6 @@ $func_names.Keys | ForEach-Object -Process {
 };
 
 # Write-Verbose -Message 'Write replaced content to file.';
-Set-Content -Path $file_path -Value $source;
+Set-Content -Path $file_path -Value $source | Out-Null;
 
-Write-Host -Message 'All done!' -ForegroundColor Green;
+Write-Host -Message 'All done!' -ForegroundColor Green | Out-Null;
