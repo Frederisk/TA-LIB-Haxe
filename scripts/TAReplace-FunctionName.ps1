@@ -3,7 +3,7 @@ using namespace System.Collections.Generic;
 using namespace System.Text.RegularExpressions;
 
 # Write-Verbose -Message 'Get file content.';
-[String]$file_name = 'CdlGapSideSideWhite';
+[String]$file_name = 'CdlHaramiCross';
 [String]$file_path = '.\src\ta\func\' + $file_name + '.hx';
 [String]$source = Get-Content -Path $file_path -Raw;
 
@@ -11,11 +11,12 @@ using namespace System.Text.RegularExpressions;
 $source = [Regex]::Replace($source, 'TA_CANDLEAVGPERIOD\((?<type_name>\w*?)\)', 'Globals.candleSettings[${type_name}].avgPeriod');
 # Write-Verbose -Message 'Append `CandleSettingType.`.';
 $source = [Regex]::Replace($source, '(?<!\.)(?=(?:BodyLong|BodyVeryLong|BodyShort|BodyDoji|ShadowLong|ShadowVeryLong|ShadowShort|ShadowVeryShort|Near|Far|Equal|AllCandleSettings)\b)', 'CandleSettingType.');
-
+# Replace `VALUE_HANDLE_DEREF_TO_ZERO(arg)` to `arg = 0`.
 $source = [Regex]::Replace($source, 'VALUE_HANDLE_DEREF_TO_ZERO\((?<arg_name>\w*?)\)', '${arg_name} = 0');
-
+# Replace `VALUE_HANDLE_DEREF(arg)` to `arg`.
 $source = [Regex]::Replace($source, 'VALUE_HANDLE_DEREF\((?<arg_name>\w*?)\)', '${arg_name}');
 
+# Replace `Idx` to `Index` and `ENUM_VALUE(RetCode,TA_SUCCESS,Success)` to `{key:value}`;
 $source = $source.Replace('Idx', 'Index');
 $source = $source.Replace('ENUM_VALUE(RetCode,TA_SUCCESS,Success)',@'
 {

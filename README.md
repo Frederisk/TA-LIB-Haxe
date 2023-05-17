@@ -7,8 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLGRAVESTONEDOJI    Gravestone Doji
-CDLHAMMER            Hammer
 CDLHANGINGMAN        Hanging Man
 CDLHARAMI            Harami Pattern
 CDLHARAMICROSS       Harami Cross Pattern
