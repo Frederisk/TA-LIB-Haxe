@@ -3,7 +3,7 @@ using namespace System.Collections.Generic;
 using namespace System.Text.RegularExpressions;
 
 # Write-Verbose -Message 'Get file content.';
-[String]$file_name = 'CdlHaramiCross';
+[String]$file_name = 'CdlIdentical3Crows';
 [String]$file_path = '.\src\ta\func\' + $file_name + '.hx';
 [String]$source = Get-Content -Path $file_path -Raw;
 
@@ -16,9 +16,11 @@ $source = [Regex]::Replace($source, 'VALUE_HANDLE_DEREF_TO_ZERO\((?<arg_name>\w*
 # Replace `VALUE_HANDLE_DEREF(arg)` to `arg`.
 $source = [Regex]::Replace($source, 'VALUE_HANDLE_DEREF\((?<arg_name>\w*?)\)', '${arg_name}');
 
+$source = [Regex]::Replace($source, 'LOOKBACK_CALL\(\w*?\)', ($file_name + 'Lookback'));
+
 # Replace `Idx` to `Index` and `ENUM_VALUE(RetCode,TA_SUCCESS,Success)` to `{key:value}`;
 $source = $source.Replace('Idx', 'Index');
-$source = $source.Replace('ENUM_VALUE(RetCode,TA_SUCCESS,Success)',@'
+$source = $source.Replace('ENUM_VALUE(RetCode,TA_SUCCESS,Success)', @'
 {
     outBegIndex: outBegIndex,
     outNBElement: outNBElement,

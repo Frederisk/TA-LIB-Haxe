@@ -7,14 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLHANGINGMAN        Hanging Man
-CDLHARAMI            Harami Pattern
-CDLHARAMICROSS       Harami Cross Pattern
-CDLHIGHWAVE          High-Wave Candle
-CDLHIKKAKE           Hikkake Pattern
-CDLHIKKAKEMOD        Modified Hikkake Pattern
-CDLHOMINGPIGEON      Homing Pigeon
-CDLIDENTICAL3CROWS   Identical Three Crows
 CDLINNECK            In-Neck Pattern
 CDLINVERTEDHAMMER    Inverted Hammer
 CDLKICKING           Kicking
