@@ -7,7 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLINNECK            In-Neck Pattern
 CDLINVERTEDHAMMER    Inverted Hammer
 CDLKICKING           Kicking
 CDLKICKINGBYLENGTH   Kicking - bull/bear determined by the longer marubozu
