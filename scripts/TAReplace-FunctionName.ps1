@@ -38,7 +38,7 @@ $func_names.Add('CandleRange', @('inOpen', 'inHigh', 'inLow', 'inClose'));
 $func_names.Add('CandleAverage', @('inOpen', 'inHigh', 'inLow', 'inClose'));
 $func_names.Add('RealBodyGapUp', @('inOpen', 'inClose'));
 $func_names.Add('RealBodyGapDown', @('inOpen', 'inClose'));
-$func_names.Add('CandleGapUp', @('inHigh', 'inLsow'));
+$func_names.Add('CandleGapUp', @('inHigh', 'inLow'));
 $func_names.Add('CandleGapDown', @('inHigh', 'inLow'));
 # Write-Verbose -Message 'Replace `TA_MACRO` to `Utility` function.';
 $func_names.Keys | ForEach-Object -Process {
