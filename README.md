@@ -7,9 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLKICKINGBYLENGTH   Kicking - bull/bear determined by the longer marubozu
-CDLLADDERBOTTOM      Ladder Bottom
-CDLLONGLEGGEDDOJI    Long Legged Doji
 CDLLONGLINE          Long Line Candle
 CDLMARUBOZU          Marubozu
 CDLMATCHINGLOW       Matching Low
