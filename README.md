@@ -7,8 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLLONGLINE          Long Line Candle
-CDLMARUBOZU          Marubozu
 CDLMATCHINGLOW       Matching Low
 CDLMATHOLD           Mat Hold
 CDLMORNINGDOJISTAR   Morning Doji Star
