@@ -7,8 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLMATCHINGLOW       Matching Low
-CDLMATHOLD           Mat Hold
 CDLMORNINGDOJISTAR   Morning Doji Star
 CDLMORNINGSTAR       Morning Star
 CDLONNECK            On-Neck Pattern
