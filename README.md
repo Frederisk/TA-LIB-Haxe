@@ -7,10 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLMORNINGDOJISTAR   Morning Doji Star
-CDLMORNINGSTAR       Morning Star
-CDLONNECK            On-Neck Pattern
-CDLPIERCING          Piercing Pattern
 CDLRICKSHAWMAN       Rickshaw Man
 CDLRISEFALL3METHODS  Rising/Falling Three Methods
 CDLSEPARATINGLINES   Separating Lines
