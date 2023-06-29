@@ -45,8 +45,9 @@ function CdlPiercing(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
         };
     }
 
-    BodyLongPeriodTotal[1] = 0;
-    BodyLongPeriodTotal[0] = 0;
+    // BodyLongPeriodTotal[1] = 0;
+    // BodyLongPeriodTotal[0] = 0;
+    BodyLongPeriodTotal = [0, 0];
     BodyLongTrailingIndex = startIndex - Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod;
 
     i = BodyLongTrailingIndex;
