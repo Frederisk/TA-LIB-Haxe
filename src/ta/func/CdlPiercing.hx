@@ -97,3 +97,4 @@ function CdlPiercing(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
 function CdlPiercingLookback() {
     return (Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod + 1);
 }
+

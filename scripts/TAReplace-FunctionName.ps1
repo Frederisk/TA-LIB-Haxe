@@ -16,7 +16,7 @@ $source = [Regex]::Replace($source, 'VALUE_HANDLE_DEREF_TO_ZERO\((?<arg_name>\w*
 # Replace `VALUE_HANDLE_DEREF(arg)` to `arg`.
 $source = [Regex]::Replace($source, 'VALUE_HANDLE_DEREF\((?<arg_name>\w*?)\)', '${arg_name}');
 
-$source = [Regex]::Replace($source, 'LOOKBACK_CALL\(\w*?\)', ($file_name + 'Lookback'));
+$source = [Regex]::Replace($source, "(?i)LOOKBACK_CALL\($file_name\)", ($file_name + 'Lookback'));
 
 # Replace `Idx` to `Index` and `ENUM_VALUE(RetCode,TA_SUCCESS,Success)` to `{key:value}`;
 $source = $source.Replace('Idx', 'Index');

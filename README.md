@@ -7,7 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLRICKSHAWMAN       Rickshaw Man
 CDLRISEFALL3METHODS  Rising/Falling Three Methods
 CDLSEPARATINGLINES   Separating Lines
 CDLSHOOTINGSTAR      Shooting Star
