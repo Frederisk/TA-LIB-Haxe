@@ -7,13 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLRISEFALL3METHODS  Rising/Falling Three Methods
-CDLSEPARATINGLINES   Separating Lines
-CDLSHOOTINGSTAR      Shooting Star
-CDLSHORTLINE         Short Line Candle
-CDLSPINNINGTOP       Spinning Top
-CDLSTALLEDPATTERN    Stalled Pattern
-CDLSTICKSANDWICH     Stick Sandwich
 CDLTAKURI            Takuri (Dragonfly Doji with very long lower shadow)
 CDLTASUKIGAP         Tasuki Gap
 CDLTHRUSTING         Thrusting Pattern

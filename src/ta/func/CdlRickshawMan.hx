@@ -112,7 +112,7 @@ function CdlRickshawMan(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
 }
 
 @:keep
-function CdlRickshawManLookback() {
+function CdlRickshawManLookback():Int {
     return TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod),
         Globals.candleSettings[CandleSettingType.Near].avgPeriod);
 }
