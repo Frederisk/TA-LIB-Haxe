@@ -38,6 +38,6 @@ function Exp(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function ExpLookback() {
+function ExpLookback():Int {
     return 0;
 }

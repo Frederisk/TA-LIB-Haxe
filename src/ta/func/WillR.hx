@@ -112,7 +112,7 @@ function WillR(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Fl
 }
 
 @:keep
-function WillRLookback(optInTimePeriod:Int) {
+function WillRLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

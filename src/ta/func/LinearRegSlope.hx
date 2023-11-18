@@ -76,7 +76,7 @@ function LinearRegSlope(startIndex:Int, endIndex:Int, inReal:Array<Float>, optIn
 }
 
 @:keep
-function LinearRegSlopeLookback(optInTimePeriod:Int) {
+function LinearRegSlopeLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

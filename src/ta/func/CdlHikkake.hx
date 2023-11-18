@@ -87,6 +87,6 @@ function CdlHikkake(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Ar
 }
 
 @:keep
-function CdlHikkakeLookback() {
+function CdlHikkakeLookback():Int {
     return 5;
 }

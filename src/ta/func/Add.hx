@@ -41,6 +41,6 @@ function Add(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<F
 }
 
 @:keep
-function AddLookback() {
+function AddLookback():Int {
     return 0;
 }

@@ -126,7 +126,7 @@ function CdlAbandonedBaby(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inH
 }
 
 @:keep
-function CdlAbandonedBabyLookback(optInPenetration:Float) {
+function CdlAbandonedBabyLookback(optInPenetration:Float):Int {
     // DEFAULT FLOAT
     // if (optInPenetration == null) {
     //     optInPenetration = 3.000000e-1;

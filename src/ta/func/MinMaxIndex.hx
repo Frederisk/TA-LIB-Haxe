@@ -107,7 +107,7 @@ function MinMaxIndex(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTim
 }
 
 @:keep
-function MinMaxIndexLookback(optInTimePeriod:Int) {
+function MinMaxIndexLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

@@ -129,6 +129,6 @@ function CdlIdentical3Crows(startIndex:Int, endIndex:Int, inOpen:Array<Float>, i
 }
 
 @:keep
-function CdlIdentical3CrowsLookback() {
+function CdlIdentical3CrowsLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod, Globals.candleSettings[CandleSettingType.Equal].avgPeriod) + 2);
 }

@@ -79,7 +79,7 @@ function RocR100(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePer
 }
 
 @:keep
-function RocR100Lookback(optInTimePeriod:Int) {
+function RocR100Lookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 10;

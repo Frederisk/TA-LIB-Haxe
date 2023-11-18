@@ -407,7 +407,7 @@ function Mama(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastLimit:
 }
 
 @:keep
-function MamaLookback(optInFastLimit:Float, optInSlowLimit:Float) {
+function MamaLookback(optInFastLimit:Float, optInSlowLimit:Float):Int {
     // INTEGER_DEFAULT
     // if(optInFastLimit = null) {
     //    optInFastLimit = 0.5;

@@ -149,7 +149,7 @@ function PlusDm(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 }
 
 @:keep
-function PlusDmLookback(optInTimePeriod:Int) {
+function PlusDmLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

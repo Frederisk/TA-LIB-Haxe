@@ -171,7 +171,7 @@ function Trima(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePerio
 }
 
 @:keep
-function TrimaLookback(optInTimePeriod:Int) {
+function TrimaLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

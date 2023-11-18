@@ -359,6 +359,6 @@ function HtPhasor(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function HtPhasorLookback() {
+function HtPhasorLookback():Int {
     return 32 + Globals.unstablePeriod[FuncUnstId.HtPhasor];
 }

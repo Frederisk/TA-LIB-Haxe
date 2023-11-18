@@ -107,6 +107,6 @@ function Cdl3LineStrike(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
 }
 
 @:keep
-function Cdl3LineStrikeLookback() {
+function Cdl3LineStrikeLookback():Int {
     return Globals.candleSettings[CandleSettingType.Near].avgPeriod;
 }

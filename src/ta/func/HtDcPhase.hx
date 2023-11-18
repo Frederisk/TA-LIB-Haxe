@@ -447,6 +447,6 @@ function HtDcPhase(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function HtDcPhaseLookback() {
+function HtDcPhaseLookback():Int {
     return (63 + Globals.unstablePeriod[FuncUnstId.HtDcPhase]);
 }

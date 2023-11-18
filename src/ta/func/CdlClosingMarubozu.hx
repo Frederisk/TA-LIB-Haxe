@@ -98,6 +98,6 @@ function CdlClosingMarubozu(startIndex:Int, endIndex:Int, inOpen:Array<Float>, i
 }
 
 @:keep
-function CdlClosingMarubozuLookback() {
+function CdlClosingMarubozuLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod);
 }

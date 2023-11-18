@@ -92,7 +92,7 @@ inline function round_pos(num:Float) {
 }
 
 @:keep
-function AdxrLookback(optInTimePeriod:Int) {
+function AdxrLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

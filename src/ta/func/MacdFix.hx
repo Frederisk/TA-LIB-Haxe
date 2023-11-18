@@ -26,7 +26,7 @@ function MacdFix(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInSignalP
 }
 
 @:keep
-function MacdFixLookback(optInSignalPeriod:Int) {
+function MacdFixLookback(optInSignalPeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInSignalPeriod == null || ){
     //     optInSignalPeriod = 9;

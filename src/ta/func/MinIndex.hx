@@ -84,7 +84,7 @@ function MinIndex(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePe
 }
 
 @:keep
-function MinIndexLookback(optInTimePeriod:Int) {
+function MinIndexLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

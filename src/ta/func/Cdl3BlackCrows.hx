@@ -106,6 +106,6 @@ function Cdl3BlackCrows(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
 }
 
 @:keep
-function Cdl3BlackCrowsLookback() {
+function Cdl3BlackCrowsLookback():Int {
     return (Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod + 3);
 }

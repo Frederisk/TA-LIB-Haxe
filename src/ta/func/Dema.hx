@@ -122,7 +122,7 @@ function Dema(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod
 }
 
 @:keep
-function DemaLookback(optInTimePeriod:Int) {
+function DemaLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

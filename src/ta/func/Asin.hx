@@ -38,6 +38,6 @@ function Asin(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function AsinLookback() {
+function AsinLookback():Int {
     return 0;
 }

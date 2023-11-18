@@ -108,7 +108,7 @@ function CdlInvertedHammer(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
 }
 
 @:keep
-function CdlInvertedHammerLookback() {
+function CdlInvertedHammerLookback():Int {
     return (TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod),
         Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod)
         + 1);

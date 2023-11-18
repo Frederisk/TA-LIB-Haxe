@@ -94,6 +94,6 @@ function CdlHaramiCross(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
 }
 
 @:keep
-function CdlHaramiCrossLookback() {
+function CdlHaramiCrossLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
 }

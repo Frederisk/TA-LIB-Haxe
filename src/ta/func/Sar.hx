@@ -221,7 +221,7 @@ function Sar(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Floa
 }
 
 @:keep
-function SarLookback(optInAcceleration:Float, optInMaximum:Float) {
+function SarLookback(optInAcceleration:Float, optInMaximum:Float):Int {
     // REAL_DEFAULT
     // if(optInAcceleration == null || ){
     //     optInAcceleration = 2.000000e-2;

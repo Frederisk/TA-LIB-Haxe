@@ -161,7 +161,7 @@ function Cdl3WhiteSoldiers(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
 }
 
 @:keep
-function Cdl3WhiteSoldiersLookback() {
+function Cdl3WhiteSoldiersLookback():Int {
     return (TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod,
         Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod),
         TAIntMax(Globals.candleSettings[CandleSettingType.Near].avgPeriod, Globals.candleSettings[CandleSettingType.Far].avgPeriod))

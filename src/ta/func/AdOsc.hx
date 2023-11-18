@@ -134,7 +134,7 @@ function AdOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Fl
 }
 
 @:keep
-function AdOscLookback(optInFastPeriod:Int, optInSlowPeriod:Int) {
+function AdOscLookback(optInFastPeriod:Int, optInSlowPeriod:Int):Int {
     var slowestPeriod:Int;
 
     // if (optInFastPeriod == null)

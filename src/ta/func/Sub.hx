@@ -41,6 +41,6 @@ function Sub(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<F
 }
 
 @:keep
-function SubLookback() {
+function SubLookback():Int {
     return 0;
 }

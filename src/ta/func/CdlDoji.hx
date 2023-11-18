@@ -73,6 +73,6 @@ function CdlDoji(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array
 }
 
 @:keep
-function CdlDojiLookback() {
+function CdlDojiLookback():Int {
     return Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod;
 }

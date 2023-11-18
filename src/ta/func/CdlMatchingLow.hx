@@ -77,6 +77,6 @@ function CdlMatchingLow(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
 }
 
 @:keep
-function CdlMatchingLowLookback() {
+function CdlMatchingLowLookback():Int {
     return (Globals.candleSettings[CandleSettingType.Equal].avgPeriod + 1);
 }

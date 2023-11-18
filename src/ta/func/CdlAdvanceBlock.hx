@@ -177,7 +177,7 @@ function CdlAdvanceBlock(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHi
 }
 
 @:keep
-function CdlAdvanceBlockLookback() {
+function CdlAdvanceBlockLookback():Int {
     return (TAIntMax(TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod,
         Globals.candleSettings[CandleSettingType.ShadowShort].avgPeriod),
         TAIntMax(Globals.candleSettings[CandleSettingType.Far].avgPeriod, Globals.candleSettings[CandleSettingType.Near].avgPeriod)),

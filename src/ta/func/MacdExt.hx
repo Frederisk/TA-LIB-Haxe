@@ -205,7 +205,7 @@ function MacdExt(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPer
 
 @:keep
 function MacdExtLookback(optInFastPeriod:Int, optInFastMAType:MAType, optInSlowPeriod:Int, optInSlowMAType:MAType, optInSignalPeriod:Int,
-        optInSignalMAType:MAType) {
+        optInSignalMAType:MAType):Int {
     var tempInteger:Int, lookbackLargest:Int;
     // DEFAULT & RANGE
     // optInFastPeriod = 12;

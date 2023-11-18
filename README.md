@@ -2,18 +2,6 @@
 
 Rewrite TA-LIB in Haxe.
 
-## Functions TODO List
-
-Pattern Recognition:
-
-```plain
-CDLTHRUSTING         Thrusting Pattern
-CDLTRISTAR           Tristar Pattern
-CDLUNIQUE3RIVER      Unique 3 River
-CDLUPSIDEGAP2CROWS   Upside Gap Two Crows
-CDLXSIDEGAP3METHODS  Upside/Downside Gap Three Methods
-```
-
 ## Road Map
 
 - [ ] Check `round_pos` function.

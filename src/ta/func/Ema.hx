@@ -88,7 +88,7 @@ function IntEma(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
 }
 
 @:keep
-function EmaLookback(optInTimePeriod:Int) {
+function EmaLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

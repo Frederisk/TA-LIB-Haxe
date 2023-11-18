@@ -237,7 +237,7 @@ function UltOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 }
 
 @:keep
-function UltOscLookback(optInTimePeriod1:Int, optInTimePeriod2:Int, optInTimePeriod3:Int) {
+function UltOscLookback(optInTimePeriod1:Int, optInTimePeriod2:Int, optInTimePeriod3:Int):Int {
     var maxPeriod:Int;
 
     // INTEGER_DEFAULT

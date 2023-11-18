@@ -128,7 +128,7 @@ function Cci(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Floa
 }
 
 @:keep
-function CciLookback(optInTimePeriod:Int) {
+function CciLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

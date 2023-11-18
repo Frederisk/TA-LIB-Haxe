@@ -38,6 +38,6 @@ function Acos(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function AcosLookback() {
+function AcosLookback():Int {
     return 0;
 }

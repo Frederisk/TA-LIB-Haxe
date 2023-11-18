@@ -97,6 +97,6 @@ function CdlBeltHold(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
 }
 
 @:keep
-function CdlBeltHoldLookback() {
+function CdlBeltHoldLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod);
 }

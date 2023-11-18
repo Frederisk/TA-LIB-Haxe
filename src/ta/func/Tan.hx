@@ -38,6 +38,6 @@ function Tan(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function TanLookback() {
+function TanLookback():Int {
     return 0;
 }

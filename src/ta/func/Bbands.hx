@@ -163,7 +163,7 @@ function Bbands(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
 }
 
 @:keep
-function BbandsLookback(optInTimePeriod:Int, optInNbDevUp:Float, optInNbDevDn:Float, optInMAType:MAType) {
+function BbandsLookback(optInTimePeriod:Int, optInNbDevUp:Float, optInNbDevDn:Float, optInMAType:MAType):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 5;

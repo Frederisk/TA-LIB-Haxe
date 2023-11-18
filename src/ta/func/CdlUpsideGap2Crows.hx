@@ -1,14 +1,15 @@
 package ta.func;
 
-import ta.func.Utility.CandleColor;
-import ta.func.Utility.CandleAverage;
-import ta.func.Utility.RealBody;
-import ta.func.Utility.CandleRange;
-import ta.Globals.CandleSettingType;
 import ta.func.Utility.TAIntMax;
+import ta.func.Utility.CandleAverage;
+import ta.func.Utility.RealBodyGapUp;
+import ta.func.Utility.RealBody;
+import ta.func.Utility.CandleColor;
+import ta.Globals.CandleSettingType;
+import ta.func.Utility.CandleRange;
 
 @:keep
-function CdlHarami(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
+function CdlUpsideGap2Crows(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
     var outBegIndex:Int;
     var outNBElement:Int;
     var outInteger:Array<Int> = [];
@@ -30,7 +31,7 @@ function CdlHarami(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
         throw new TAException(BadParam);
     }
 
-    lookbackTotal = CdlHaramiLookback();
+    lookbackTotal = CdlUpsideGap2CrowsLookback();
 
     if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
@@ -48,16 +49,16 @@ function CdlHarami(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
 
     BodyLongPeriodTotal = 0;
     BodyShortPeriodTotal = 0;
-    BodyLongTrailingIndex = startIndex - 1 - Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod;
-    BodyShortTrailingIndex = startIndex - Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod;
+    BodyLongTrailingIndex = startIndex - 2 - Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod;
+    BodyShortTrailingIndex = startIndex - 1 - Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod;
 
     i = BodyLongTrailingIndex;
-    while (i < startIndex - 1) {
+    while (i < startIndex - 2) {
         BodyLongPeriodTotal += CandleRange(CandleSettingType.BodyLong, i, inOpen, inHigh, inLow, inClose);
         i++;
     }
     i = BodyShortTrailingIndex;
-    while (i < startIndex) {
+    while (i < startIndex - 1) {
         BodyShortPeriodTotal += CandleRange(CandleSettingType.BodyShort, i, inOpen, inHigh, inLow, inClose);
         i++;
     }
@@ -65,18 +66,23 @@ function CdlHarami(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
 
     outIndex = 0;
     do {
-        if (RealBody(i - 1, inOpen, inClose) > CandleAverage(CandleSettingType.BodyLong, BodyLongPeriodTotal, i - 1, inOpen, inHigh, inLow, inClose)
-            && RealBody(i, inOpen, inClose) <= CandleAverage(CandleSettingType.BodyShort, BodyShortPeriodTotal, i, inOpen, inHigh, inLow, inClose)
-            && Math.max(inClose[i], inOpen[i]) < Math.max(inClose[i - 1], inOpen[i - 1])
-            && Math.min(inClose[i], inOpen[i]) > Math.min(inClose[i - 1], inOpen[i - 1])) {
-            outInteger[outIndex++] = -CandleColor(i - 1, inOpen, inClose) * 100;
+        if (CandleColor(i - 2, inOpen, inClose) == 1
+            && RealBody(i - 2, inOpen, inClose) > CandleAverage(CandleSettingType.BodyLong, BodyLongPeriodTotal, i - 2, inOpen, inHigh, inLow, inClose)
+            && CandleColor(i - 1, inOpen, inClose) == -1
+            && RealBody(i - 1, inOpen, inClose) <= CandleAverage(CandleSettingType.BodyShort, BodyShortPeriodTotal, i - 1, inOpen, inHigh, inLow, inClose)
+            && RealBodyGapUp(i - 1, i - 2, inOpen, inClose)
+            && CandleColor(i, inOpen, inClose) == -1
+            && inOpen[i] > inOpen[i - 1]
+            && inClose[i] < inClose[i - 1]
+            && inClose[i] > inClose[i - 2]) {
+            outInteger[outIndex++] = -100;
         } else {
             outInteger[outIndex++] = 0;
         }
 
-        BodyLongPeriodTotal += CandleRange(CandleSettingType.BodyLong, i - 1, inOpen, inHigh, inLow, inClose)
+        BodyLongPeriodTotal += CandleRange(CandleSettingType.BodyLong, i - 2, inOpen, inHigh, inLow, inClose)
             - CandleRange(CandleSettingType.BodyLong, BodyLongTrailingIndex, inOpen, inHigh, inLow, inClose);
-        BodyShortPeriodTotal += CandleRange(CandleSettingType.BodyShort, i, inOpen, inHigh, inLow, inClose)
+        BodyShortPeriodTotal += CandleRange(CandleSettingType.BodyShort, i - 1, inOpen, inHigh, inLow, inClose)
             - CandleRange(CandleSettingType.BodyShort, BodyShortTrailingIndex, inOpen, inHigh, inLow, inClose);
         i++;
         BodyLongTrailingIndex++;
@@ -94,6 +100,6 @@ function CdlHarami(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
 }
 
 @:keep
-function CdlHaramiLookback():Int {
-    return (TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
+function CdlUpsideGap2CrowsLookback():Int {
+    return (TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 2);
 }

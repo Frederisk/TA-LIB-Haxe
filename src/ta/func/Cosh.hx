@@ -41,6 +41,6 @@ function Cosh(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function CoshLookback() {
+function CoshLookback():Int {
     return 0;
 }

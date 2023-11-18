@@ -96,6 +96,6 @@ function CdlOnNeck(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
 }
 
 @:keep
-function CdlOnNeckLookback() {
+function CdlOnNeckLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.Equal].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
 }

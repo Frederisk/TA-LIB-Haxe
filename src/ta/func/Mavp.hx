@@ -144,7 +144,7 @@ function Mavp(startIndex:Int, endIndex:Int, inReal:Array<Float>, inPeriods:Array
 }
 
 @:keep
-function MavpLookback(optInMinPeriod:Int, optInMaxPeriod:Int, optInMAType:MAType) {
+function MavpLookback(optInMinPeriod:Int, optInMaxPeriod:Int, optInMAType:MAType):Int {
     // INTEGER_DEFAULT
     // if(optInMinPeriod = null) {
     //    optInFastLimit = 3;

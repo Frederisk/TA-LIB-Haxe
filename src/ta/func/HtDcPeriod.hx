@@ -354,6 +354,6 @@ function HtDcPeriod(startIndex:Int, endIndex:Int, inReal:Array<Float>):{outBegIn
 }
 
 @:keep
-function HtDcPeriodLookback() {
+function HtDcPeriodLookback():Int {
     return (32 + Globals.unstablePeriod[FuncUnstId.HtDcPeriod]);
 }

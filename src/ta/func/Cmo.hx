@@ -196,7 +196,7 @@ function Cmo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 }
 
 @:keep
-function CmoLookback(optInTimePeriod:Int) {
+function CmoLookback(optInTimePeriod:Int):Int {
     var retValue;
 
     // INTEGER_DEFAULT

@@ -120,7 +120,7 @@ function StochRsi(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePe
 }
 
 @:keep
-function StochRsiLookback(optInTimePeriod:Int, optInFastK_Period:Int, optInFastD_Period:Int, optInFastD_MAType:MAType) {
+function StochRsiLookback(optInTimePeriod:Int, optInFastK_Period:Int, optInFastD_Period:Int, optInFastD_MAType:MAType):Int {
     var retValue;
 
     // DEFAULT & RANGE

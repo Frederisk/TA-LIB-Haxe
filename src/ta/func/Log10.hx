@@ -41,6 +41,6 @@ function Log10(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function Log10Lookback() {
+function Log10Lookback():Int {
     return 0;
 }

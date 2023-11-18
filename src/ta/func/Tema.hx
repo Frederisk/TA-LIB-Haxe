@@ -144,7 +144,7 @@ function Tema(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod
 }
 
 @:keep
-function TemaLookback(optInTimePeriod:Int) {
+function TemaLookback(optInTimePeriod:Int):Int {
     var retValue:Int;
 
     // INTEGER_DEFAULT

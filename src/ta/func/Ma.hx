@@ -154,7 +154,7 @@ function Ma(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:I
 }
 
 @:keep
-function MaLookback(optInTimePeriod:Int, optInMAType:MAType) {
+function MaLookback(optInTimePeriod:Int, optInMAType:MAType):Int {
     var retValue:Int;
 
     // INTEGER_DEFAULT

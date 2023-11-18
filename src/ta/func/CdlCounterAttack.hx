@@ -106,6 +106,6 @@ function CdlCounterAttack(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inH
 }
 
 @:keep
-function CdlCounterAttackLookback() {
+function CdlCounterAttackLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.Equal].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
 }

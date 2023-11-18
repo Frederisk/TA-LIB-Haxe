@@ -86,6 +86,6 @@ function Cdl2Crows(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
 }
 
 @:keep
-function Cdl2CrowsLookback() {
+function Cdl2CrowsLookback():Int {
     return (Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod + 2);
 }

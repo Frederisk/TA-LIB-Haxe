@@ -509,6 +509,6 @@ function HtTrendMode(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function HtTrendModeLookback() {
+function HtTrendModeLookback():Int {
     return (63 + Globals.unstablePeriod[FuncUnstId.HtTrendMode]);
 }

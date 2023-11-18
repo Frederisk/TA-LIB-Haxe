@@ -149,7 +149,7 @@ function Cdl3StarsInSouth(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inH
 }
 
 @:keep
-function Cdl3StarsInSouthLookback() {
+function Cdl3StarsInSouthLookback():Int {
     return (TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod,
         Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod),
         TAIntMax(Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod, Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod))

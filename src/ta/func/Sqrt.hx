@@ -37,6 +37,6 @@ function Sqrt(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
     };
 }
 
-function SqrtLookback() {
+function SqrtLookback():Int {
     return 0;
 }

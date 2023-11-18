@@ -38,6 +38,6 @@ function Floor(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function FloorLookback() {
+function FloorLookback():Int {
     return 0;
 }

@@ -94,6 +94,6 @@ function CdlLongLeggedDoji(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
 }
 
 @:keep
-function CdlLongLeggedDojiLookback() {
+function CdlLongLeggedDojiLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod);
 }

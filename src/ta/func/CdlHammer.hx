@@ -122,7 +122,7 @@ function CdlHammer(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Arr
 }
 
 @:keep
-function CdlHammerLookback() {
+function CdlHammerLookback():Int {
     return (TAIntMax(TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod,
         Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod),
         Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod),

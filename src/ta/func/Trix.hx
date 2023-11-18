@@ -184,7 +184,7 @@ function Trix(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod
 }
 
 @:keep
-function TrixLookback(optInTimePeriod:Int) {
+function TrixLookback(optInTimePeriod:Int):Int {
     var emaLookback:Int;
 
     // INTEGER_DEFAULT

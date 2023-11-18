@@ -116,7 +116,7 @@ function Atr(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Floa
 }
 
 @:keep
-function AtrLookback(optInTimePeriod:Int) {
+function AtrLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

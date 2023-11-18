@@ -58,7 +58,7 @@ function Mom(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 }
 
 @:keep
-function MomLookback(optInTimePeriod:Int) {
+function MomLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 10;

@@ -38,6 +38,6 @@ function Sin(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function SinLookback() {
+function SinLookback():Int {
     return 0;
 }

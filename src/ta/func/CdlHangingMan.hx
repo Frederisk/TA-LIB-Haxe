@@ -122,7 +122,7 @@ function CdlHangingMan(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh
 }
 
 @:keep
-function CdlHangingManLookback() {
+function CdlHangingManLookback():Int {
     return (TAIntMax(TAIntMax(TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod,
         Globals.candleSettings[CandleSettingType.ShadowLong].avgPeriod),
         Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod),

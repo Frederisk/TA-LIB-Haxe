@@ -119,7 +119,7 @@ function CdlMorningDojiStar(startIndex:Int, endIndex:Int, inOpen:Array<Float>, i
 }
 
 @:keep
-function CdlMorningDojiStarLookback(optInPenetration:Float) {
+function CdlMorningDojiStarLookback(optInPenetration:Float):Int {
     // DEFAULT FLOAT
     // if (optInPenetration == null) {
     //     optInPenetration = 3.000000e-1;

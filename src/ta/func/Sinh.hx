@@ -41,6 +41,6 @@ function Sinh(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function SinhLookback() {
+function SinhLookback():Int {
     return 0;
 }

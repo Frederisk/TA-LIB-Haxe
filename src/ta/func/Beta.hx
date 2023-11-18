@@ -146,7 +146,7 @@ function Beta(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<
 }
 
 @:keep
-function BetaLookback(optInTimePeriod:Int) {
+function BetaLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 5;

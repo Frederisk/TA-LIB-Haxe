@@ -94,6 +94,6 @@ function CdlDragonflyDoji(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inH
 }
 
 @:keep
-function CdlDragonflyDojiLookback() {
+function CdlDragonflyDojiLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod);
 }

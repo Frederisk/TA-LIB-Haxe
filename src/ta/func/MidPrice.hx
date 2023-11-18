@@ -82,7 +82,7 @@ function MidPrice(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array
 }
 
 @:keep
-function MidPriceLookback(optInTimePeriod:Int) {
+function MidPriceLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

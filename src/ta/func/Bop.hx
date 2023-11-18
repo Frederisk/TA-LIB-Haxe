@@ -44,6 +44,6 @@ function Bop(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Flo
     };}
 
 @:keep
-function BopLookback() {
+function BopLookback():Int {
     return 0;
 }

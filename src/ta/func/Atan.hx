@@ -38,6 +38,6 @@ function Atan(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function AtanLookback() {
+function AtanLookback():Int {
     return 0;
 }

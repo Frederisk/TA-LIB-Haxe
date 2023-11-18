@@ -76,7 +76,7 @@ function IntSma(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
 }
 
 @:keep
-function SmaLookback(optInTimePeriod:Int) {
+function SmaLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

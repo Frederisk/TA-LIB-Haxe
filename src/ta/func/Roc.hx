@@ -65,7 +65,7 @@ function Roc(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 }
 
 @:keep
-function RocLookback(optInTimePeriod:Int) {
+function RocLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 10;

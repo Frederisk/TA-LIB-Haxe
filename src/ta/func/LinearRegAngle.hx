@@ -78,7 +78,7 @@ function LinearRegAngle(startIndex:Int, endIndex:Int, inReal:Array<Float>, optIn
 }
 
 @:keep
-function LinerRegAngleLookback(optInTimePeriod:Int) {
+function LinerRegAngleLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

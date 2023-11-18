@@ -84,7 +84,7 @@ function Max(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 }
 
 @:keep
-function MaxLookback(optInTimePeriod:Int) {
+function MaxLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

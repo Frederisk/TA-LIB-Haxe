@@ -424,6 +424,6 @@ function HtTrendline(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function HtTrendlineLookback() {
+function HtTrendlineLookback():Int {
     return (63 + Globals.unstablePeriod[FuncUnstId.HtTrendline]);
 }

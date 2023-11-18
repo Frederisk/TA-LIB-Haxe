@@ -94,6 +94,6 @@ function CdlLongLine(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
 }
 
 @:keep
-function CdlLongLineLookback() {
+function CdlLongLineLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowShort].avgPeriod);
 }

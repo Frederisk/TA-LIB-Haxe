@@ -102,6 +102,6 @@ function CdlGapSideSideWhite(startIndex:Int, endIndex:Int, inOpen:Array<Float>, 
 }
 
 @:keep
-function CdlGapSideSideWhiteLookback() {
+function CdlGapSideSideWhiteLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.Near].avgPeriod, Globals.candleSettings[CandleSettingType.Equal].avgPeriod) + 2);
 }

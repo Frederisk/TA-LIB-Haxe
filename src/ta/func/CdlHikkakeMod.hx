@@ -122,6 +122,6 @@ function CdlHikkakeMod(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh
 }
 
 @:keep
-function CdlHikkakeModLookback() {
+function CdlHikkakeModLookback():Int {
     return (TAIntMax(1, Globals.candleSettings[CandleSettingType.Near].avgPeriod) + 5);
 }

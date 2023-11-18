@@ -448,6 +448,6 @@ function HtSine(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function HtSineLookback() {
+function HtSineLookback():Int {
     return (63 + Globals.unstablePeriod[FuncUnstId.HtSine]);
 }

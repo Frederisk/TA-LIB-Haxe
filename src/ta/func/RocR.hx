@@ -64,7 +64,7 @@ function RocR(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod
     };
 }
 
-function RocRLookback(optInTimePeriod:Int) {
+function RocRLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 10;

@@ -270,7 +270,7 @@ function SarExt(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 
 @:keep
 function SarExtLookback(optInStartValue:Float, optInOffsetOnReverse:Float, optInAccelerationInitLong:Float, optInAccelerationLong:Float,
-        optInAccelerationMaxLong:Float, optInAccelerationInitShort:Float, optInAccelerationShort:Float, optInAccelerationMaxShort:Float) {
+        optInAccelerationMaxLong:Float, optInAccelerationInitShort:Float, optInAccelerationShort:Float, optInAccelerationMaxShort:Float):Int {
     // DEFAULT && RANGE
     // optInStartValue = 0
     // optInOffsetOnReverse = 0

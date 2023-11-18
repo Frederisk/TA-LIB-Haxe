@@ -214,7 +214,7 @@ function IntMacd(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPer
 }
 
 @:keep
-function MacdLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInSignalPeriod:Int) {
+function MacdLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInSignalPeriod:Int):Int {
     var tempInteger:Int;
 
     // INTEGER_DEFAULT

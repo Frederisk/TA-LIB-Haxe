@@ -85,6 +85,6 @@ function CdlHignWave(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
 }
 
 @:keep
-function CdlHignWaveLookback() {
+function CdlHignWaveLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowVeryLong].avgPeriod);
 }

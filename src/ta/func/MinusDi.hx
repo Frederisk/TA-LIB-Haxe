@@ -197,7 +197,7 @@ inline function round_pos(num:Float) {
 }
 
 @:keep
-function MinusDiLookback(optInTimePeriod:Int) {
+function MinusDiLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

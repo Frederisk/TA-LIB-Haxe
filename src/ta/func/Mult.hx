@@ -41,6 +41,6 @@ function Mult(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<
 }
 
 @:keep
-function MultLookback() {
+function MultLookback():Int {
     return 0;
 }

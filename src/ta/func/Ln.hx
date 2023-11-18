@@ -38,6 +38,6 @@ function Ln(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function LnLookback() {
+function LnLookback():Int {
     return 0;
 }

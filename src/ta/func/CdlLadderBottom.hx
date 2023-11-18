@@ -90,6 +90,6 @@ function CdlLadderBottom(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHi
 }
 
 @:keep
-function CdlLadderBottomLookback() {
+function CdlLadderBottomLookback():Int {
     return (Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod + 4);
 }

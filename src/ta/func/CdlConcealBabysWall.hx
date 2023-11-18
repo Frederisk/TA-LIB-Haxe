@@ -105,6 +105,6 @@ function CdlConcealBabysWall(startIndex:Int, endIndex:Int, inOpen:Array<Float>, 
 }
 
 @:keep
-function CdlConcealBabysWallLookback() {
+function CdlConcealBabysWallLookback():Int {
     return (Globals.candleSettings[CandleSettingType.ShadowVeryLong].avgPeriod + 3);
 }

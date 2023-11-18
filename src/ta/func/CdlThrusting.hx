@@ -1,20 +1,24 @@
 package ta.func;
 
+import ta.func.Utility.TAIntMax;
 import ta.func.Utility.RealBody;
 import ta.func.Utility.CandleColor;
 import ta.func.Utility.CandleAverage;
-import ta.func.Utility.CandleRange;
 import ta.Globals.CandleSettingType;
+import ta.func.Utility.CandleRange;
 
 @:keep
-function CdlDarkCloudCover(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>,
-        optInPenetration:Float) {
+function CdlThrusting(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
     var outBegIndex:Int;
     var outNBElement:Int;
     var outInteger:Array<Int> = [];
 
-    var BodyLongPeriodTotal:Float;
-    var i:Int, outIndex:Int, BodyLongTrailingIndex:Int, lookbackTotal:Int;
+    var EqualPeriodTotal:Float, BodyLongPeriodTotal:Float;
+    var i:Int,
+        outIndex:Int,
+        EqualTrailingIndex:Int,
+        BodyLongTrailingIndex:Int,
+        lookbackTotal:Int;
 
     if (startIndex < 0) {
         throw new TAException(OutOfRangeStartIndex);
@@ -25,15 +29,8 @@ function CdlDarkCloudCover(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
     if (inOpen == null || inHigh == null || inLow == null || inClose == null) {
         throw new TAException(BadParam);
     }
-    // DEFAULT FLOAT
-    // if (optInPenetration == null) {
-    //     optInPenetration = 5.000000e-1;
-    // }
-    if (optInPenetration < 0) {
-        throw new TAException(BadParam);
-    }
 
-    lookbackTotal = CdlDarkCloudCoverLookback(optInPenetration);
+    lookbackTotal = CdlThrustingLookback();
 
     if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
@@ -49,9 +46,16 @@ function CdlDarkCloudCover(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
         };
     }
 
+    EqualPeriodTotal = 0;
+    EqualTrailingIndex = startIndex - Globals.candleSettings[CandleSettingType.Equal].avgPeriod;
     BodyLongPeriodTotal = 0;
     BodyLongTrailingIndex = startIndex - Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod;
 
+    i = EqualTrailingIndex;
+    while (i < startIndex) {
+        EqualPeriodTotal += CandleRange(CandleSettingType.Equal, i - 1, inOpen, inHigh, inLow, inClose);
+        i++;
+    }
     i = BodyLongTrailingIndex;
     while (i < startIndex) {
         BodyLongPeriodTotal += CandleRange(CandleSettingType.BodyLong, i - 1, inOpen, inHigh, inLow, inClose);
@@ -61,19 +65,23 @@ function CdlDarkCloudCover(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
 
     outIndex = 0;
     do {
-        if (CandleColor(i - 1, inOpen, inClose) == 1
+        if (CandleColor(i - 1, inOpen, inClose) == -1
             && RealBody(i - 1, inOpen, inClose) > CandleAverage(CandleSettingType.BodyLong, BodyLongPeriodTotal, i - 1, inOpen, inHigh, inLow, inClose)
-            && CandleColor(i, inOpen, inClose) == -1
-            && inOpen[i] > inHigh[i - 1]
-            && inClose[i] > inOpen[i - 1]
-            && inClose[i] < inClose[i - 1] - RealBody(i - 1, inOpen, inClose) * optInPenetration) {
+            && CandleColor(i, inOpen, inClose) == 1
+            && inOpen[i] < inLow[i - 1]
+            && inClose[i] > inClose[i - 1] + CandleAverage(CandleSettingType.Equal, EqualPeriodTotal, i - 1, inOpen, inHigh, inLow, inClose)
+            && inClose[i] <= inClose[i - 1] + RealBody(i - 1, inOpen, inClose) * 0.5) {
             outInteger[outIndex++] = -100;
         } else {
             outInteger[outIndex++] = 0;
         }
+
+        EqualPeriodTotal += CandleRange(CandleSettingType.Equal, i - 1, inOpen, inHigh, inLow, inClose)
+            - CandleRange(CandleSettingType.Equal, EqualTrailingIndex - 1, inOpen, inHigh, inLow, inClose);
         BodyLongPeriodTotal += CandleRange(CandleSettingType.BodyLong, i - 1, inOpen, inHigh, inLow, inClose)
             - CandleRange(CandleSettingType.BodyLong, BodyLongTrailingIndex - 1, inOpen, inHigh, inLow, inClose);
         i++;
+        EqualTrailingIndex++;
         BodyLongTrailingIndex++;
     } while (i <= endIndex);
 
@@ -88,15 +96,6 @@ function CdlDarkCloudCover(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
 }
 
 @:keep
-function CdlDarkCloudCoverLookback(optInPenetration:Float):Int {
-    // DEFAULT FLOAT
-    // if (optInPenetration == null) {
-    //     optInPenetration = 5.000000e-1;
-    // }
-    if (optInPenetration < 0) {
-        return -1;
-    }
-
-    optInPenetration;
-    return (Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod + 1);
+function CdlThrustingLookback():Int {
+    return (TAIntMax(Globals.candleSettings[CandleSettingType.Equal].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
 }

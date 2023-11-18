@@ -41,6 +41,6 @@ function Tanh(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function TanhLookback() {
+function TanhLookback():Int {
     return 0;
 }

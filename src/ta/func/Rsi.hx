@@ -198,7 +198,7 @@ function Rsi(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:
 }
 
 @:keep
-function RsiLookback(optInTimePeriod:Int) {
+function RsiLookback(optInTimePeriod:Int):Int {
     var retValue:Int;
 
     // INTEGER_DEFAULT

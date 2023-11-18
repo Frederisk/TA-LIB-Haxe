@@ -1,9 +1,11 @@
 package ta.func;
 
+import ta.func.Utility.RealBodyGapDown;
+import ta.func.Utility.RealBodyGapUp;
 import ta.func.Utility.CandleColor;
 
 @:keep
-function Cdl3Outside(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
+function CdlXSideGap3Methods(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Array<Float>, inLow:Array<Float>, inClose:Array<Float>) {
     var outBegIndex:Int;
     var outNBElement:Int;
     var outInteger:Array<Int> = [];
@@ -20,7 +22,7 @@ function Cdl3Outside(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
         throw new TAException(BadParam);
     }
 
-    lookbackTotal = Cdl3OutsideLookback();
+    lookbackTotal = CdlXSideGap3MethodsLookback();
 
     if (startIndex < lookbackTotal) {
         startIndex = lookbackTotal;
@@ -40,14 +42,19 @@ function Cdl3Outside(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
 
     outIndex = 0;
     do {
-        if ((CandleColor(i - 1,inOpen, inClose) == 1 && CandleColor(i - 2,inOpen, inClose) == -1 && inClose[i - 1] > inOpen[i - 2] && inOpen[i - 1] < inClose[i - 2]
-            && inClose[i] > inClose[i - 1])
-            || (CandleColor(i - 1,inOpen, inClose) == -1 && CandleColor(i - 2,inOpen, inClose) == 1 && inOpen[i - 1] > inClose[i - 2] && inClose[i - 1] < inOpen[i - 2]
-                && inClose[i] < inClose[i - 1])) {
-            outInteger[outIndex++] = CandleColor(i - 1,inOpen, inClose) * 100;
+        if (CandleColor(i - 2, inOpen, inClose) == CandleColor(i - 1, inOpen, inClose)
+            && CandleColor(i - 1, inOpen, inClose) == -CandleColor(i, inOpen, inClose)
+            && inOpen[i] < Math.max(inClose[i - 1], inOpen[i - 1])
+            && inOpen[i] > Math.min(inClose[i - 1], inOpen[i - 1])
+            && inClose[i] < Math.max(inClose[i - 2], inOpen[i - 2])
+            && inClose[i] > Math.min(inClose[i - 2], inOpen[i - 2])
+            && ((CandleColor(i - 2, inOpen, inClose) == 1 && RealBodyGapUp(i - 1, i - 2, inOpen, inClose))
+                || (CandleColor(i - 2, inOpen, inClose) == -1 && RealBodyGapDown(i - 1, i - 2, inOpen, inClose)))) {
+            outInteger[outIndex++] = CandleColor(i - 2, inOpen, inClose) * 100;
         } else {
             outInteger[outIndex++] = 0;
         }
+
         i++;
     } while (i <= endIndex);
 
@@ -61,7 +68,6 @@ function Cdl3Outside(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
     };
 }
 
-@:keep
-function Cdl3OutsideLookback():Int {
-    return 3;
+function CdlXSideGap3MethodsLookback():Int {
+    return 2;
 }

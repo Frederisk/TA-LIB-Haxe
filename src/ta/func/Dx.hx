@@ -179,7 +179,7 @@ inline function round_pos(num:Float) {
 }
 
 @:keep
-function DxLookback(optInTimePeriod:Int) {
+function DxLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

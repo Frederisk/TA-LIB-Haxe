@@ -112,7 +112,7 @@ function CdlEveningStar(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHig
 }
 
 @:keep
-function CdlEveningStarLookback(optInPenetration:Float) {
+function CdlEveningStarLookback(optInPenetration:Float):Int {
     // DEFAULT FLOAT
     // if (optInPenetration == null) {
     //     optInPenetration = 3.000000e-1;

@@ -111,6 +111,6 @@ function CdlKickingByLength(startIndex:Int, endIndex:Int, inOpen:Array<Float>, i
 }
 
 @:keep
-function CdlKickingByLengthLookback() {
+function CdlKickingByLengthLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
 }

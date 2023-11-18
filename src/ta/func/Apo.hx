@@ -54,7 +54,7 @@ function Apo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPeriod:
 }
 
 @:keep
-function ApoLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInMAType:MAType) {
+function ApoLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInMAType:MAType):Int {
     // INTEGER_DEFAULT
     // if(optInFastPeriod == null || ){
     //     optInFastPeriod = 12;
@@ -89,7 +89,7 @@ function IntPo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPerio
     var outBegIndex1:Int;
     var outNbElement1:Int;
     var outBegIndex2:Int;
-    var outNbElement2:Int;
+    // var outNbElement2:Int; Unused
 
     var i:Int, j:Int;
 
@@ -101,7 +101,7 @@ function IntPo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPerio
 
     ret = Ma(startIndex, endIndex, inReal, optInFastPeriod, optInMethod_2);
     outBegIndex2 = ret.outBegIndex;
-    outNbElement2 = ret.outNBElement;
+    // outNbElement2 = ret.outNBElement; Unused
     tempBuffer = ret.outReal;
 
     // retCode = FUNCTION_CALL(MA)(, VALUE_HANDLE_OUT(outBegIndex2), VALUE_HANDLE_OUT(outNbElement2),

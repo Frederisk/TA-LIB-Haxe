@@ -96,6 +96,6 @@ function Cdl3Inside(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Ar
 }
 
 @:keep
-function Cdl3InsideLookback() {
+function Cdl3InsideLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.BodyShort].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 2);
 }

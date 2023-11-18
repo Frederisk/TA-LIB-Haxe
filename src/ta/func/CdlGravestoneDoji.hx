@@ -95,6 +95,6 @@ function CdlGravestoneDoji(startIndex:Int, endIndex:Int, inOpen:Array<Float>, in
 }
 
 @:keep
-function CdlGravestoneDojiLookback() {
+function CdlGravestoneDojiLookback():Int {
     return TAIntMax(Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod, Globals.candleSettings[CandleSettingType.ShadowVeryShort].avgPeriod);
 }

@@ -75,7 +75,7 @@ function MidPoint(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePe
 }
 
 @:keep
-function MidPointLookback(optInTimePeriod:Int) {
+function MidPointLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

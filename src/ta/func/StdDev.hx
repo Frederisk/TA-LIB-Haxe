@@ -126,7 +126,7 @@ function IntStdDevUsingPrecalcMa(inReal:Array<Float>, inMovAvg:Array<Float>, inM
 }
 
 @:keep
-function StdDevLookback(optInTimePeriod:Int, optInNbDev:Float) {
+function StdDevLookback(optInTimePeriod:Int, optInNbDev:Float):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 5;

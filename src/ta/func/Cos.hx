@@ -38,6 +38,6 @@ function Cos(startIndex:Int, endIndex:Int, inReal:Array<Float>) {
 }
 
 @:keep
-function CosLookback() {
+function CosLookback():Int {
     return 0;
 }

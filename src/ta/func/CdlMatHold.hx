@@ -128,7 +128,7 @@ function CdlMatHold(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:Ar
 }
 
 @:keep
-function CdlMatHoldLookback(optInPenetration:Float) {
+function CdlMatHoldLookback(optInPenetration:Float):Int {
     // DEFAULT FLOAT
     // if (optInPenetration == null) {
     //     optInPenetration = 5.000000e-1;

@@ -173,7 +173,7 @@ function T3(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod:I
 }
 
 @:keep
-function T3lookback(optInTimePeriod:Int, optInVFactor:Float) {
+function T3lookback(optInTimePeriod:Int, optInVFactor:Float):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 5;

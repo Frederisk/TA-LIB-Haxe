@@ -120,7 +120,7 @@ function Correl(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Arra
 }
 
 @:keep
-function CorrelLookback(optInTimePeriod:Int) {
+function CorrelLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

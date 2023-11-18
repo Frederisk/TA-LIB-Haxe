@@ -107,7 +107,7 @@ function Aroon(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Fl
     };
 }
 
-function AroonLookback(optInTimePeriod:Int) {
+function AroonLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

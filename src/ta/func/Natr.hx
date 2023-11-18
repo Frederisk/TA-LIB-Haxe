@@ -128,7 +128,7 @@ function Natr(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Flo
 }
 
 @:keep
-function NatrLookback(optInTimePeriod:Int) {
+function NatrLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

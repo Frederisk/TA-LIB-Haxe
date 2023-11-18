@@ -118,7 +118,7 @@ function CdlEveningDojiStar(startIndex:Int, endIndex:Int, inOpen:Array<Float>, i
 }
 
 @:keep
-function CdlEveningDojiStarLookback(optInPenetration:Float) {
+function CdlEveningDojiStarLookback(optInPenetration:Float):Int {
     // DEFAULT FLOAT
     // if (optInPenetration == null) {
     //     optInPenetration = 3.000000e-1;

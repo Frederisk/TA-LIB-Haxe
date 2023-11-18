@@ -103,7 +103,7 @@ function IntVar(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeri
 }
 
 @:keep
-function VarLookback(optInTimePeriod:Int, optInNbDev:Float) {
+function VarLookback(optInTimePeriod:Int, optInNbDev:Float):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 5;

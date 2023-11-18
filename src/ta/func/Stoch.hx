@@ -183,7 +183,7 @@ function Stoch(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Fl
 }
 
 @:keep
-function StochLookback(optInFastK_Period:Int, optInSlowK_Period:Int, optInSlowK_MAType:MAType, optInSlowD_Period:Int, optInSlowD_MAType:MAType) {
+function StochLookback(optInFastK_Period:Int, optInSlowK_Period:Int, optInSlowK_MAType:MAType, optInSlowD_Period:Int, optInSlowD_MAType:MAType):Int {
     var retValue:Int;
 
     // DEFAULT & RANGE

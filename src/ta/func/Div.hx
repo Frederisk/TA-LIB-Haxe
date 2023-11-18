@@ -41,6 +41,6 @@ function Div(startIndex:Int, endIndex:Int, inReal0:Array<Float>, inReal1:Array<F
 }
 
 @:keep
-function DivLookback() {
+function DivLookback():Int {
     return 0;
 }

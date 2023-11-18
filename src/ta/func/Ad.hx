@@ -51,6 +51,6 @@ function Ad(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<Float
 }
 
 @:keep
-function AdLookback() {
+function AdLookback():Int {
     return 0;
 }

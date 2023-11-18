@@ -207,7 +207,7 @@ class MoneyFlow {
 }
 
 @:keep
-function MfiLookback(optInTimePeriod:Int) {
+function MfiLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

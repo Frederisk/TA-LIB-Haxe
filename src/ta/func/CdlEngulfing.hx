@@ -65,6 +65,6 @@ function CdlEngulfing(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:
 }
 
 @:keep
-function CdlEngulfingLookback() {
+function CdlEngulfingLookback():Int {
     return 2;
 }

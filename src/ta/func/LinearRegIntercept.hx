@@ -77,7 +77,7 @@ function LinearRegIntercept(startIndex:Int, endIndex:Int, inReal:Array<Float>, o
 }
 
 @:keep
-function LinearRegInterceptLookback(optInTimePeriod:Int) {
+function LinearRegInterceptLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

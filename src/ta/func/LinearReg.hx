@@ -78,7 +78,7 @@ function LinearReg(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimeP
 }
 
 @:keep
-function LinearRegLookback(optInTimePeriod:Int) {
+function LinearRegLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

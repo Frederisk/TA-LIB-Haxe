@@ -97,6 +97,6 @@ function CdlBreakaway(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:
 }
 
 @:keep
-function CdlBreakawayLookback() {
+function CdlBreakawayLookback():Int {
     return (Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod + 4);
 }

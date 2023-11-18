@@ -95,6 +95,6 @@ function CdlDojiStar(startIndex:Int, endIndex:Int, inOpen:Array<Float>, inHigh:A
 }
 
 @:keep
-function CdlDojiStarLookback() {
+function CdlDojiStarLookback():Int {
     return (TAIntMax(Globals.candleSettings[CandleSettingType.BodyDoji].avgPeriod, Globals.candleSettings[CandleSettingType.BodyLong].avgPeriod) + 1);
 }

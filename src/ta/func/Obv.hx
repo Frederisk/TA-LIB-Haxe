@@ -53,6 +53,6 @@ function Obv(startIndex:Int, endIndex:Int, inReal:Array<Float>, inVolume:Array<F
 }
 
 @:keep
-function ObvLookback() {
+function ObvLookback():Int {
     return 0;
 }

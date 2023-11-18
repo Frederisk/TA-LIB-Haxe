@@ -105,7 +105,7 @@ function AroonOsc(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array
 }
 
 @:keep
-function AroonOscLookback(optInTimePeriod:Int) {
+function AroonOscLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 14;

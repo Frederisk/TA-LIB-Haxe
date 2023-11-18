@@ -145,7 +145,7 @@ function Kama(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInTimePeriod
 }
 
 @:keep
-function KamaLookback(optInTimePeriod:Int) {
+function KamaLookback(optInTimePeriod:Int):Int {
     // INTEGER_DEFAULT
     // if(optInTimePeriod == null || ){
     //     optInTimePeriod = 30;

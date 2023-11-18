@@ -170,7 +170,7 @@ function StochF(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 }
 
 @:keep
-function StochFLookback(optInFastK_Period:Int, optInFastD_Period:Int, optInFastD_MAType:MAType) {
+function StochFLookback(optInFastK_Period:Int, optInFastD_Period:Int, optInFastD_MAType:MAType):Int {
     var retValue:Int;
 
     // DEFAULT & RANGE

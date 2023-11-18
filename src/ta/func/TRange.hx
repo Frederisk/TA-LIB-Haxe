@@ -66,6 +66,6 @@ function TRange(startIndex:Int, endIndex:Int, inHigh:Array<Float>, inLow:Array<F
 }
 
 @:keep
-function TRangeLookback() {
+function TRangeLookback():Int {
     return 1;
 }

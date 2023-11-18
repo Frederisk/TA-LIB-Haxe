@@ -52,7 +52,7 @@ function Ppo(startIndex:Int, endIndex:Int, inReal:Array<Float>, optInFastPeriod:
 }
 
 @:keep
-function PpoLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInMAType:MAType) {
+function PpoLookback(optInFastPeriod:Int, optInSlowPeriod:Int, optInMAType:MAType):Int {
     // INTEGER_DEFAULT
     // if(optInFastPeriod == null || ){
     //     optInFastPeriod = 12;
