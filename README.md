@@ -7,8 +7,6 @@ Rewrite TA-LIB in Haxe.
 Pattern Recognition:
 
 ```plain
-CDLTAKURI            Takuri (Dragonfly Doji with very long lower shadow)
-CDLTASUKIGAP         Tasuki Gap
 CDLTHRUSTING         Thrusting Pattern
 CDLTRISTAR           Tristar Pattern
 CDLUNIQUE3RIVER      Unique 3 River
