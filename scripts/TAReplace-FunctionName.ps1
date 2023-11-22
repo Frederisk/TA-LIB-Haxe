@@ -49,4 +49,4 @@ $func_names.Keys | ForEach-Object -Process {
 # Write-Verbose -Message 'Write replaced content to file.';
 Set-Content -Path $file_path -Value $source | Out-Null;
 
-Write-Host -Message 'All done!' -ForegroundColor Green | Out-Null;
+# Write-Host -Message 'All done!' -ForegroundColor Green | Out-Null;
