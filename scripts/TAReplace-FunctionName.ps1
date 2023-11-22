@@ -42,8 +42,8 @@ $func_names.Add('CandleGapUp', @('inHigh', 'inLow'));
 $func_names.Add('CandleGapDown', @('inHigh', 'inLow'));
 # Write-Verbose -Message 'Replace `TA_MACRO` to `Utility` function.';
 $func_names.Keys | ForEach-Object -Process {
-    $oragin_name = 'TA_' + $_.ToUpper();
-    $source = [Regex]::Replace($source, $oragin_name + '\((?<oragin_args>(?:[^\(\)]|\(.*?\))*?)\)', "$_(`${oragin_args}, $([String]::Join(', ', $func_names[$_])))");
+    $origin_name = 'TA_' + $_.ToUpper();
+    $source = [Regex]::Replace($source, $origin_name + '\((?<origin_args>(?:[^\(\)]|\(.*?\))*?)\)', "$_(`${origin_args}, $([String]::Join(', ', $func_names[$_])))");
 };
 
 # Write-Verbose -Message 'Write replaced content to file.';
