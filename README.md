@@ -5,7 +5,7 @@ Rewrite TA-LIB in Haxe.
 ## Road Map
 
 - [ ] Check `round_pos` function.
-- [ ] Simply rewrite all necessary methods according to the original project (C language project).
+- [x] Simply rewrite all necessary methods according to the original project (C language project).
 - [ ] Create the necessary classes and interfaces to provide good design in the lens language.
 - [ ] Review all methods and add necessary comments.
 - [ ] Create unit tests and CI.
